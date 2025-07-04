@@ -5,20 +5,32 @@ import { motion } from "framer-motion";
 import { FaCheckCircle } from "react-icons/fa";
 
 const highlights = [
-  "\u201cWhy Palma leads to New York without navigation to the Bahamas\u201d",
-  "\u201cWhat cooling data has to do with tire pressure\u201d",
-  "\u201cHow to turn your machinery into a high-performance orchestra\u201d",
-  "\u201cWhat sensors, AI and real-time data really bring \u2013 and how to get started\u201d"
+  "Learn to Set the Right Targets\nWhy precise KPIs are your single biggest lever for avoiding wasted effort and wasted budget.",
+  "Correlate Cooling & Pressure Metrics\nHow to integrate thermal, hydraulic and energy readings so you spot hidden process bottlenecks immediately.",
+  "Align Equipment for Peak Throughput\nA proven framework to synchronize machine settings, reduce variability and keep every line running at top speed.",
+  "Deploy Sensors, AI & Real-Time Dashboards\nExactly what a modern monitoring stack delivers—and a step-by-step playbook to get yours live in days, not months."
 ];
 
+const containerVariants = {
+  hidden: {},
+  visible: {
+    transition: {
+      staggerChildren: 0.3,
+    },
+  },
+};
 
+const itemVariants = {
+  hidden: { opacity: 0, y: 30 },
+  visible: { opacity: 1, y: 0 },
+};
 
- const GuidePreview = () => {
+const GuidePreview = () => {
   return (
     <section className="bg-black text-white py-28 px-6 md:px-32 relative overflow-hidden">
       <div className="absolute inset-0 pointer-events-none z-0">
-        <div className="absolute w-96 h-96 bg-red-400 opacity-10 rounded-full blur-3xl top-[-80px] left-[-80px] "></div>
-        <div className="absolute w-96 h-96 bg-red-600 opacity-10 rounded-full blur-3xl bottom-[-80px] right-[-80px] "></div>
+        <div className="absolute w-96 h-96 bg-red-400 opacity-10 rounded-full blur-3xl top-[-80px] left-[-80px] animate-pulse"></div>
+        <div className="absolute w-96 h-96 bg-red-600 opacity-10 rounded-full blur-3xl bottom-[-80px] right-[-80px] animate-pulse"></div>
       </div>
 
       <div className="relative z-10 max-w-5xl mx-auto text-center">
@@ -27,7 +39,7 @@ const highlights = [
           whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 0.7 }}
-          className="text-4xl md:text-5xl font-extrabold mb-6"
+          className="text-4xl md:text-5xl font-extrabold mb-6 animate-pulse"
         >
           📘 What to expect – A look at the guide
         </motion.h2>
@@ -43,29 +55,25 @@ const highlights = [
         </motion.p>
 
         <motion.ul
+          variants={containerVariants}
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
-          transition={{ staggerChildren: 0.3 }}
-          className="text-left space-y-6 text-lg md:text-xl max-w-3xl mx-auto"
+          className="text-left space-y-8 text-lg md:text-xl max-w-3xl mx-auto"
         >
           {highlights.map((item, index) => (
             <motion.li
               key={index}
-              initial={{ opacity: 0, x: -20 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ delay: index * 0.3, duration: 0.6 }}
-              className="flex items-start gap-4"
+              variants={itemVariants}
+              className="flex items-start gap-4 hover:scale-[1.02] transition-transform"
             >
-              <FaCheckCircle className="text-green-400 mt-1" />
-              <span className="text-white">{item}</span>
+              <FaCheckCircle className="text-green-400 mt-1 animate-bounce" />
+              <span className="text-white whitespace-pre-line">{item}</span>
             </motion.li>
           ))}
         </motion.ul>
-
-          
       </div>
     </section>
   );
 };
-export default GuidePreview
+export default GuidePreview;

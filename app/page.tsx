@@ -7,6 +7,7 @@ import GuidePreview from "./components/GuidePreview"
 import AuthorSection from "./components/About";
 import CallToActionSection from "./components/CalltoAction";
 import Footer from "./components/Footer";
+import TestimonialsSection from "./components/Testimonals";
 
 
 
@@ -15,10 +16,11 @@ export default function Home() {
     <main className="bg-black text-white">
       <HeroSection />
       <ProblemSection />
-      <SolutionSection/>
+     <SolutionSection/>
       <WhoNeeds/>
       <GuidePreview/>
        <AuthorSection/>
+       <TestimonialsSection/>
        <CallToActionSection/>
        <Footer/>
       

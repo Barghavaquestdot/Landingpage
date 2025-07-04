@@ -3,7 +3,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { FaEnvelope, FaGlobe } from "react-icons/fa";
+import { FaEnvelope, FaGlobe, FaPhone } from "react-icons/fa";
 
  const Footer = () => {
   return (
@@ -20,7 +20,7 @@ import { FaEnvelope, FaGlobe } from "react-icons/fa";
       >
         {/* Brand Info */}
         <div>
-          <h3 className="text-xl font-semibold text-red-500 mb-3">RedBlack Publishing</h3>
+          <h3 className="text-xl font-semibold text-red-500 mb-3">BS-Systeme GmbH</h3>
           <p className="text-sm text-gray-400">✓ Over 30 years of experience</p>
           <p className="text-sm text-gray-400">✓ Practice-tested solutions for SMEs</p>
           <p className="text-sm text-gray-400">✓ Made in Germany: BS-Systeme GmbH, Zorneding</p>
@@ -35,11 +35,14 @@ import { FaEnvelope, FaGlobe } from "react-icons/fa";
           <p className="flex items-center gap-2 text-sm">
             <FaGlobe className="text-red-400" /> www.bs-systeme.de
           </p>
+          <p className="flex items-center gap-2 text-sm">
+            <FaPhone className="text-red-400"/> +49 89 413 291 000
+          </p>
         </div>
 
         {/* Copyright */}
         <div className="text-xs text-gray-400 text-center md:text-right flex flex-col justify-end">
-          <p>© {new Date().getFullYear()} RedBlack Publishing. All rights reserved.</p>
+          <p>© {new Date().getFullYear()}  BS-Systeme GmbH. All rights reserved.</p>
         </div>
       </motion.div>
     </footer>

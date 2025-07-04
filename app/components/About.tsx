@@ -18,7 +18,7 @@ export const AuthorSection = () => {
           className="flex-shrink-0"
         >
           <Image
-            src="/andreas-babel.jpg"
+            src="/author.jpg"
             alt="Andreas Babel"
             width={280}
             height={280}

@@ -18,7 +18,7 @@ const itemVariants = {
   visible: { opacity: 1, y: 0 },
 };
 
- const WhoNeeds = () => {
+const WhoNeeds = () => {
   const audience = [
     "Managing directors of small and medium-sized enterprises",
     "Energy and production managers",
@@ -64,26 +64,30 @@ const itemVariants = {
           This guide is built for professionals ready to ditch guesswork and start optimizing with clarity.
         </motion.p>
 
-        <motion.div
-          variants={containerVariants}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
-          className="grid gap-8 md:grid-cols-2 text-left"
-        >
-          {audience.map((item, index) => (
-            <motion.div
-              key={index}
-              variants={itemVariants}
-              className="flex items-start gap-4 p-6 rounded-2xl bg-white shadow-xl hover:scale-[1.02] transition-transform"
-            >
-              <FaCheck className="text-red-600 text-xl mt-1" />
-              <span className="text-lg font-medium text-gray-800">{item}</span>
-            </motion.div>
-          ))}
-        </motion.div>
+       <motion.div
+  variants={containerVariants}
+  initial="hidden"
+  whileInView="visible"
+  viewport={{ once: true }}
+  className="grid gap-8 md:grid-cols-2 text-left"
+>
+  {audience.map((item, index) => (
+    <motion.div
+      key={index}
+      variants={itemVariants}
+     className={`flex items-start gap-4 p-6 rounded-2xl bg-white shadow-xl hover:scale-[1.02] transition-transform w-full ${
+    index === 2 ? "md:col-span-2 md:mx-auto max-w-xl" : ""
+  }`}
+    >
+      <FaCheck className="text-red-600 text-xl mt-1" />
+      <span className="text-lg font-medium text-gray-800">{item}</span>
+    </motion.div>
+  ))}
+</motion.div>
+
       </div>
     </section>
   );
 };
+
 export default WhoNeeds;

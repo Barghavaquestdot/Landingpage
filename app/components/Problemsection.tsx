@@ -6,7 +6,7 @@ import Image from "next/image";
 
  const ProblemSection = () => {
   return (
-    <section className="bg-white text-black w-full py-20 px-6 md:px-24 relative overflow-hidden">
+    <section className="bg-gray-300 text-black w-full py-20 px-6 md:px-24 relative overflow-hidden">
       <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center gap-12">
         {/* Fantasy Image on Left */}
         <motion.div
@@ -17,7 +17,7 @@ import Image from "next/image";
           className="w-full md:w-1/2"
         >
           <Image
-            src="/23052.jpg"
+            src="/section2.jpg"
             alt="Fantasy World"
             width={600}
             height={400}
@@ -53,19 +53,18 @@ import Image from "next/image";
                   initial={{ opacity: 0, x: -20 }}
                   whileInView={{ opacity: 1, x: 0 }}
                   transition={{ duration: 0.5, delay: index * 0.3 }}
-                  className="relative pl-6 before:absolute before:left-0 before:top-2 before:w-3 before:h-3 before:bg-red-600 before:rounded-full"
+                  className="relative pl-6 before:absolute before:left-0 before:top-2 before:w-3 before:h-3 before:bg-red-400 before:rounded-full"
                 >
                   {point}
                 </motion.li>
               ))}
           </motion.ul>
 
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 1, duration: 0.8 }}
-            className="mt-10 text-xl font-semibold text-red-600"
+           <motion.p
+            initial={{ opacity: 0 }}
+            animate={{ opacity: [0, 1, 0] }}
+            transition={{ duration: 4, repeat: Infinity, repeatType: "loop" }}
+            className="mt-10 text-2xl font-bold text-red-400 text-center"
           >
             ➡ Every small mistake adds up to a huge problem.
           </motion.p>

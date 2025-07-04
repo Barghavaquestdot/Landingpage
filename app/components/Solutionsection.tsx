@@ -2,19 +2,47 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { FaLightbulb, FaCog, FaBatteryHalf, FaSmile, FaFileAlt } from "react-icons/fa";
+import PulsingDataFlowNetwork from "./PulsingDataFlowNetwork";
+import { FaCogs, FaLeaf, FaSmile, FaListAlt, FaBolt } from "react-icons/fa";
 
- const SolutionSection = () => {
+const advantages = [
+  {
+    icon: <FaListAlt className="text-teal-400 text-3xl" />,
+    title: "Clear roadmap for precise processes",
+  },
+  {
+    icon: <FaCogs className="text-teal-400 text-3xl" />,
+    title: "Automated collection and use of real-time data",
+  },
+  {
+    icon: <FaLeaf className="text-teal-400 text-3xl" />,
+    title: "Reduce energy consumption & costs by up to 25%",
+  },
+  {
+    icon: <FaSmile className="text-teal-400 text-3xl" />,
+    title: "Motivate employees, retain customers long-term",
+  },
+  {
+    icon: <FaBolt className="text-teal-400 text-3xl" />,
+    title: "Meet sustainability & CSRD reporting requirements",
+  },
+];
+
+const SolutionSection = () => {
   return (
-    <section className="bg-gray-300 text-white w-full py-20 px-6 md:px-24 relative overflow-hidden">
-      <div className="max-w-5xl mx-auto text-center relative z-10">
+    <section className="relative bg-black text-white py-24 px-6 md:px-20 overflow-hidden">
+      {/* Animated Network in Background */}
+      <div className="absolute inset-0 z-0 opacity-40 pointer-events-none">
+        <PulsingDataFlowNetwork/>
+      </div>
+
+      {/* Main Content */}
+      <div className="relative z-10 max-w-5xl mx-auto text-center">
         <motion.h2
           initial={{ opacity: 0, y: 30 }}
-
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
           transition={{ duration: 0.8 }}
-          className="text-3xl md:text-4xl font-bold mb-8 text-primary"
+          className="text-4xl md:text-5xl font-bold mb-8"
         >
           The 40-Page Guide® is your roadmap for maximum efficiency
         </motion.h2>
@@ -22,49 +50,35 @@ import { FaLightbulb, FaCog, FaBatteryHalf, FaSmile, FaFileAlt } from "react-ico
         <motion.p
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ delay: 0.4, duration: 0.8 }}
-          className="text-lg md:text-xl text-black mb-12"
+          transition={{ duration: 0.8, delay: 0.2 }}
+          className="text-lg md:text-xl max-w-3xl mx-auto mb-12"
         >
-          Learn how to analyze your processes, get real-time data, and reduce energy usage while boosting employee satisfaction and customer loyalty.
+          You will learn step by step how to analyze your processes, obtain precise data, and optimize
+          your energy and resource usage – all while relieving the burden on your employees and delighting your customers.
         </motion.p>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 text-left text-black">
-          {[
-            {
-              icon: <FaLightbulb className="text-yellow-400 w-6 h-6" />, text: "Clear roadmap for precise processes"
-            },
-            {
-              icon: <FaCog className="text-blue-400 w-6 h-6" />, text: "Automated collection and use of real-time data"
-            },
-            {
-              icon: <FaBatteryHalf className="text-green-400 w-6 h-6" />, text: "Reduce energy consumption & costs by up to 25%"
-            },
-            {
-              icon: <FaSmile className="text-pink-400 w-6 h-6" />, text: "Motivate employees, retain customers long-term"
-            },
-            {
-              icon: <FaFileAlt className="text-purple-400 w-6 h-6" />, text: "Meet sustainability & CSRD reporting requirements with ease"
-            }
-          ].map((item, index) => (
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {advantages.map((item, index) => (
             <motion.div
               key={index}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: index * 0.2, duration: 0.6 }}
-              className="flex items-start gap-4 bg-white bg-opacity-5 p-6 rounded-xl shadow-md hover:bg-opacity-10 transition"
+              initial={{ opacity: 0, scale: 0.9 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.5, delay: index * 0.2 }}
+              className="flex items-center gap-4 bg-white bg-opacity-10 p-5 rounded-xl shadow-lg"
             >
               {item.icon}
-              <span className="text-lg">{item.text}</span>
+              <span className="text-left text-base md:text-lg font-medium text-black">
+                {item.title}
+              </span>
             </motion.div>
           ))}
         </div>
 
         <motion.button
-          whileHover={{ scale: 1.05 }}
-          whileTap={{ scale: 0.95 }}
-          className="mt-12 bg-red-700 text-white px-8 py-4 rounded-full text-lg font-semibold shadow-lg hover:bg-red-600 transition-all cursor-pointer"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.5 }}
+          className="mt-12 bg-gradient-to-r from-red-500 to-black hover:from-black hover:to-red-500 px-8 py-4 text-white font-bold text-lg rounded-full shadow-xl"
         >
           ➡ Request your free guide now
         </motion.button>
@@ -72,4 +86,5 @@ import { FaLightbulb, FaCog, FaBatteryHalf, FaSmile, FaFileAlt } from "react-ico
     </section>
   );
 };
+
 export default SolutionSection;

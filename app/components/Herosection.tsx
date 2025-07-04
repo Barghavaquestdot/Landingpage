@@ -9,18 +9,19 @@ const Herosection = () => {
   return (
     <section className="relative bg-gradient-to-br from-black via-red-900 to-black text-white w-full min-h-screen flex items-center justify-center px-6 md:px-24 py-32 overflow-hidden"
      style={{
-        backgroundImage: "url('/openbook2.jpg')",
+        backgroundImage: "url('/andreas.jpg')",
         backgroundSize: "cover",
         backgroundPosition: "center",
-        backgroundRepeat: "no-repeat"
+        backgroundRepeat: "no-repeat",
+        opacity:0.9
       }}>
       {/* Floating Background Accent */}
       <div className="absolute w-96 h-96 bg-red-700 opacity-20 rounded-full blur-3xl top-[-100px] left-[-100px] "></div>
 
       {/* Book Icon Top Left */}
       <div className="absolute top-8 left-6 md:left-16 z-20 flex items-center gap-2 text-black text-3xl font-semibold">
-        <FaBook className="text-3xl" />
-        <span className="font-bold tracking-wide">The Guide</span>
+        <FaBook className="text-3xl text-white" />
+        <span className="font-bold tracking-wide text-white">The Guide</span>
       </div>
 
       {/* Hero Content */}
@@ -29,7 +30,7 @@ const Herosection = () => {
           initial={{ opacity: 0, y: -40 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1 }}
-          className="text-4xl md:text-xl font-extrabold leading-tight mb-6 text-red-100 font-serif"
+          className="text-4xl md:text-4xl font-extrabold leading-tight mb-6 text-red-100 font-serif"
         >
         " The secret code for decision-makers:"
           <br />
@@ -40,7 +41,7 @@ const Herosection = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.4, duration: 1 }}
-          className="text-lg md:text-xl text-gray-100 mb-10 font-light"
+          className="text-lg md:text-2xl text-white mb-10 font-light"
         >
           How to make precision the strongest force in your company – and save energy, time and money.
         </motion.p>
