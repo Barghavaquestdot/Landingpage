@@ -1,102 +1,102 @@
 "use client";
 
 import { motion } from "framer-motion";
-import PulsingDataFlowNetwork from "./PulsingDataFlowNetwork";
 import { FaCogs, FaLeaf, FaSmile, FaListAlt, FaBolt } from "react-icons/fa";
+import PulsingDataFlowNetwork from "./PulsingDataFlowNetwork";
 import Image from "next/image";
-
-const advantages = [
-  {
-    icon: <FaListAlt className="text-teal-400 text-3xl" />,
-    title: "Clear roadmap for precise processes",
-  },
-  {
-    icon: <FaCogs className="text-teal-400 text-3xl" />,
-    title: "Automated collection and use of real-time data",
-  },
-  {
-    icon: <FaLeaf className="text-teal-400 text-3xl" />,
-    title: "Reduce energy consumption & costs by up to 25%",
-  },
-  {
-    icon: <FaSmile className="text-teal-400 text-3xl" />,
-    title: "Motivate employees, retain customers long-term",
-  },
-  {
-    icon: <FaBolt className="text-teal-400 text-3xl" />,
-    title: "Meet sustainability & CSRD reporting requirements",
-  },
-];
+import Button from "./ui/Button";
+import { useTranslation } from "react-i18next";
+import { withTranslationReady } from "../utils/withTranslationReady";
 
 const SolutionSection = () => {
+  const { t, ready } = useTranslation("common");
+
+  if (!ready) return null;
+
+  type Advantage = {
+    icon: keyof typeof iconMap;
+    title: string;
+  };
+
+  const iconMap = {
+    list: <FaListAlt className="text-red-500 text-3xl" />,
+    cogs: <FaCogs className="text-red-500 text-3xl" />,
+    leaf: <FaLeaf className="text-red-500 text-3xl" />,
+    smile: <FaSmile className="text-red-500 text-3xl" />,
+    bolt: <FaBolt className="text-red-500 text-3xl" />,
+  };
+
+  const rawAdvantages = t("solution.advantages", { returnObjects: true });
+  const advantages: Advantage[] = Array.isArray(rawAdvantages)
+    ? rawAdvantages.filter(
+        (item): item is Advantage =>
+          typeof item.title === "string" && item.icon in iconMap
+      )
+    : [];
+
   return (
     <section className="relative bg-black text-white py-24 px-6 md:px-20 overflow-hidden">
-      {/* Left: Animated Network Background */}
-      <div className="absolute inset-0 z-0 opacity-40 pointer-events-none">
+      {/* Background Grid */}
+      <div className="absolute inset-0 z-0 opacity-20 pointer-events-none">
         <PulsingDataFlowNetwork />
       </div>
 
-      {/* Right: Background Image (blurred) */}
-      <div className="absolute top-0 right-0 w-1/2 h-full z-0 pointer-events-none hidden md:block">
-        <div className="relative w-full h-full">
-          <Image
-            src="/section3.jpg" // Replace with your actual image path
-            alt="Blurred background"
-            fill
-            className="object-cover  opacity-60"
-          />
-        </div>
-      </div>
+      <div className="relative z-10 max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+        {/* Text + Cards */}
+        <div className="text-center lg:text-left">
+          <motion.h2
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            className="text-3xl md:text-5xl font-extrabold mb-6"
+          >
+            {t("solution.title")}
+          </motion.h2>
 
-      {/* Content */}
-      <div className="relative z-10 max-w-5xl mx-auto text-center">
-        <motion.h2
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          className="text-4xl md:text-5xl font-bold mb-8"
-        >
-          The 40-Page Guide® is your roadmap for maximum efficiency
-        </motion.h2>
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+            className="text-lg md:text-xl text-white/90 max-w-2xl mb-10"
+          >
+            {t("solution.description")}
+          </motion.p>
 
-        <motion.p
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.2 }}
-          className="text-lg md:text-xl max-w-3xl mx-auto mb-12"
-        >
-          You will learn step by step how to analyze your processes, obtain precise data, and optimize
-          your energy and resource usage – all while relieving the burden on your employees and delighting your customers.
-        </motion.p>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-10">
+            {advantages.map((item, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, scale: 0.95 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.4, delay: index * 0.1 }}
+                className="flex items-start gap-4 bg-white/10 hover:bg-white/20 p-4 rounded-xl backdrop-blur transition"
+              >
+                <div>{iconMap[item.icon]}</div>
+                <p className="text-white text-left text-base font-medium">
+                  {item.title}
+                </p>
+              </motion.div>
+            ))}
+          </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {advantages.map((item, index) => (
-            <motion.div
-              key={index}
-              initial={{ opacity: 0, scale: 0.9 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.5, delay: index * 0.2 }}
-              className="flex items-center gap-4 bg-white bg-opacity-10 p-5 rounded-xl shadow-lg"
-            >
-              {item.icon}
-              <span className="text-left text-base md:text-lg font-medium text-black">
-                {item.title}
-              </span>
-            </motion.div>
-          ))}
+          <Button>{t("solution.cta")}</Button>
         </div>
 
-        <motion.button
-          whileHover={{ scale: 1.05 }}
-          whileTap={{ scale: 0.95 }}
-          transition={{ type: "spring", stiffness: 300 }}
-          className="bg-red-500 hover:bg-red-700 text-white px-6 py-4 my-5 rounded-full font-semibold text-lg shadow-lg cursor-pointer"
-        >
-          ➡ Request for free Guide
-        </motion.button>
+        {/* Larger Image */}
+        <div className="w-full flex justify-center">
+          <div className="relative w-full max-w-[520px] h-[640px] md:h-[720px] rounded-xl overflow-hidden shadow-2xl">
+            <Image
+              src="/section3.jpg"
+              alt={t("solution.imageAlt")}
+              fill
+              className="object-contain object-top"
+              priority
+            />
+          </div>
+        </div>
       </div>
     </section>
   );
 };
 
-export default SolutionSection;
+export default withTranslationReady(SolutionSection, "common");

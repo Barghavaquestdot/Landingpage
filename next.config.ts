@@ -1,11 +1,11 @@
-import type { NextConfig } from "next";
+// next.config.js
+const { i18n } = require('./next-i18next.config');
 
-const nextConfig: NextConfig = {
+const nextConfig = {
   output: 'export',
   images: {
     unoptimized: true,
   },
-  /* config options here */
 };
 
-export default nextConfig;
+module.exports = nextConfig;

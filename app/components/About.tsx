@@ -1,13 +1,16 @@
-// components/AuthorSection.tsx
-
 "use client";
 
 import { motion } from "framer-motion";
 import Image from "next/image";
+import Button from "./ui/Button";
+import { useTranslation } from "react-i18next";
+import { withTranslationReady } from "../utils/withTranslationReady";
 
-export const AuthorSection = () => {
+const AuthorSection = () => {
+  const { t } = useTranslation("common");
+
   return (
-    <section className="bg-gray-100 text-black py-12 px-6 md:px-32">
+    <section className="bg-gray-100 text-black py-20 px-6 md:px-32">
       <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center gap-16">
         {/* Author Image */}
         <motion.div
@@ -19,10 +22,10 @@ export const AuthorSection = () => {
         >
           <Image
             src="/author1.jpg"
-            alt="Andreas Babel"
+            alt={t("author.imageAlt")}
             width={280}
             height={280}
-            className="rounded-full shadow-2xl border-4"
+            className="rounded-full shadow-2xl border-4 border-white"
           />
         </motion.div>
 
@@ -35,30 +38,24 @@ export const AuthorSection = () => {
           className="text-left max-w-3xl"
         >
           <h2 className="text-4xl md:text-5xl font-extrabold text-gray-900 mb-4 text-center md:text-left">
-            About the author
+            {t("author.title")}
           </h2>
           <h3 className="text-2xl md:text-3xl font-semibold text-red-600 mb-6 text-center md:text-left">
-             Andreas Babel – the data conductor for your success
+            {t("author.subtitle")}
           </h3>
-          <p className="text-lg leading-relaxed font-light text-gray-700">
-            Andreas Babel has been an expert in automation, digitalization, and efficiency for almost 30 years.
-            With his platform solution <strong>"eco2lot,"</strong> he has helped companies save up to
-            <strong> 25% energy</strong>, halve machine downtime, and increase employee motivation.
+          <p className="text-lg leading-relaxed text-gray-800 font-light">
+            {t("author.description.part1")} <strong>eco2lot</strong>,{" "}
+            {t("author.description.part2")} <strong>25%</strong>,{" "}
+            {t("author.description.part3")}
           </p>
-          <motion.button
-          whileHover={{ scale: 1.05 }}
-          whileTap={{ scale: 0.95 }}
-          transition={{ type: "spring", stiffness: 300 }}
-          className="bg-red-500 hover:bg-red-700 text-white px-6 py-4 my-5 mx-30 rounded-full font-semibold text-lg shadow-lg cursor-pointer"
-        >
-          ➡ Know about Author
-        </motion.button>
+
+          <div className="mt-8">
+            <Button>{t("author.cta")}</Button>
+          </div>
         </motion.div>
-       
       </div>
-       
     </section>
   );
 };
 
-export default AuthorSection
+export default withTranslationReady(AuthorSection, "common");

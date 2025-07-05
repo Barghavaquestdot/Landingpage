@@ -1,30 +1,46 @@
+"use client";
 
-import HeroSection from "./components/Herosection";
-import ProblemSection from "./components/Problemsection";
-import SolutionSection from "./components/Solutionsection";
-import WhoNeeds from "./components/WhoNeeds"
-import GuidePreview from "./components/GuidePreview"
-import AuthorSection from "./components/About";
-import CallToActionSection from "./components/CalltoAction";
-import Footer from "./components/Footer";
-import TestimonialsSection from "./components/Testimonals";
+import "../i18n";
+import { withTranslationReady } from "./utils/withTranslationReady";
 
+// Wrap components
+import HeroSectionBase from "./components/Herosection";
+import ProblemSectionBase from "./components/Problemsection";
+import SolutionSectionBase from "./components/Solutionsection";
+import WhoNeedsBase from "./components/WhoNeeds";
+import GuidePreviewBase from "./components/GuidePreview";
+import AuthorSectionBase from "./components/About";
+import CallToActionSectionBase from "./components/CalltoAction";
+import FooterBase from "./components/Footer";
+import TestimonialsSectionBase from "./components/Testimonals";
+import LanguageSwitcher from "./components/LanguageSwitcher";
+import { useTranslation } from "react-i18next";
 
+const HeroSection = withTranslationReady(HeroSectionBase, "common");
+const ProblemSection = withTranslationReady(ProblemSectionBase, "common");
+const SolutionSection = withTranslationReady(SolutionSectionBase, "common");
+const WhoNeeds = withTranslationReady(WhoNeedsBase, "common");
+const GuidePreview = withTranslationReady(GuidePreviewBase, "common");
+const AuthorSection = withTranslationReady(AuthorSectionBase, "common");
+const CallToActionSection = withTranslationReady(CallToActionSectionBase, "common");
+const Footer = withTranslationReady(FooterBase, "common");
+const TestimonialsSection = withTranslationReady(TestimonialsSectionBase, "common");
 
 export default function Home() {
+  const { i18n } = useTranslation();
+
   return (
     <main className="bg-black text-white">
-      <HeroSection />
-      <ProblemSection />
-     <SolutionSection/>
-      <WhoNeeds/>
-      <GuidePreview/>
-       <AuthorSection/>
-       <TestimonialsSection/>
-       <CallToActionSection/>
-       <Footer/>
-      
-     
+      <LanguageSwitcher />
+      <HeroSection key={i18n.language} />
+      <ProblemSection key={i18n.language + '-problem'} />
+      <SolutionSection key={i18n.language + '-solution'} />
+      <WhoNeeds key={i18n.language + '-who'} />
+      <GuidePreview key={i18n.language + '-guide'} />
+      <AuthorSection key={i18n.language + '-author'} />
+      <TestimonialsSection key={i18n.language + '-testimonials'} />
+      <CallToActionSection key={i18n.language + '-cta'} />
+      <Footer key={i18n.language + '-footer'} />
     </main>
   );
 }

@@ -1,0 +1,123 @@
+{
+  "hero": {
+    "title": "Der Leitfaden",
+    "quote": "„Der geheime Code für Entscheidungsträger“",
+    "subtitle": {
+      "part1": "Echtzeitdaten",
+      "part2": "statt blindem Handeln"
+    },
+    "description": "Wie Sie Präzision zur stärksten Kraft in Ihrem Unternehmen machen – und Energie, Zeit und Geld sparen.",
+    "cta": "➡ Jetzt den Leitfaden holen"
+  },
+  "problem": {
+    "title": "Ungenauigkeit",
+    "highlight": "kostet Sie Gewinn",
+    "imageAlt": "Illustration des Kostenlecks",
+    "points": [
+      "Daten werden manuell eingegeben oder gar nicht genutzt",
+      "Maschinen laufen ineffizient und zu lange",
+      "Fehler, Ausschuss, Ausfallzeiten – und niemand weiß warum"
+    ],
+    "warning": "Jeder kleine Fehler summiert sich zu einem großen Problem.",
+    "cta": "Mehr erfahren"
+  },
+  "solution": {
+    "title": "Der 40-seitige Guide® ist Ihr Fahrplan für maximale Effizienz",
+    "description": "Erfahren Sie Schritt für Schritt, wie Sie Ihre Prozesse analysieren, präzise Daten gewinnen und Ihre Ressourcennutzung optimieren – während Sie Mitarbeiter entlasten und Kunden begeistern.",
+    "cta": "➡ Kostenlosen Guide anfordern",
+    "imageAlt": "Guide-Buchcover",
+    "advantages": [
+      {
+        "icon": "list",
+        "title": "Klarer Fahrplan für präzise Prozesse"
+      },
+      {
+        "icon": "cogs",
+        "title": "Automatische Erfassung und Nutzung von Echtzeitdaten"
+      },
+      {
+        "icon": "leaf",
+        "title": "Energieverbrauch & Kosten um bis zu 25 % senken"
+      },
+      {
+        "icon": "smile",
+        "title": "Mitarbeiter motivieren, Kunden langfristig binden"
+      },
+      {
+        "icon": "bolt",
+        "title": "Nachhaltigkeit & CSRD-Berichtspflichten erfüllen"
+      }
+    ]
+  },
+  "who": {
+    "title": "Für wen ist dieser Leitfaden gedacht?",
+    "description": "Dieser Leitfaden richtet sich an Fachleute, die keine Vermutungen mehr anstellen, sondern mit Klarheit optimieren möchten.",
+    "audience": [
+      "Geschäftsführer von kleinen und mittelständischen Unternehmen",
+      "Energie- und Produktionsleiter",
+      "Entscheider, die Präzision und Digitalisierung gemeinsam denken"
+    ],
+    "cta": "➡ Jetzt unverbindlich anfragen"
+  },
+  "guidePreview": {
+    "title": "Was Sie erwartet – Ein Blick in",
+    "highlight": "den Leitfaden",
+    "subtitle": "Was Sie auf 40 Seiten erwartet",
+    "imageAlt": "Vorschau des Leitfadens",
+    "cta": "➡ Jetzt buchen",
+    "highlights": [
+      {
+        "title": "Lernen Sie, die richtigen Ziele zu setzen",
+        "description": "Warum präzise KPIs Ihr größter Hebel sind, um unnötigen Aufwand und verschwendetes Budget zu vermeiden."
+      },
+      {
+        "title": "Kühlung und Druckmetriken korrelieren",
+        "description": "Wie Sie thermische, hydraulische und Energie-Messwerte integrieren, um verborgene Engpässe sofort zu erkennen."
+      },
+      {
+        "title": "Anlagen für maximale Leistung ausrichten",
+        "description": "Ein bewährtes Framework zur Synchronisierung von Maschineneinstellungen, um Variabilität zu reduzieren."
+      },
+      {
+        "title": "Sensoren, KI & Dashboards einsetzen",
+        "description": "Was ein modernes Monitoring-System liefert – und ein Schritt-für-Schritt-Plan, es in Tagen statt Monaten einzuführen."
+      }
+    ]
+  },
+  "author": {
+    "title": "Über den Autor",
+    "subtitle": "Andreas Babel – der Daten-Dirigent für Ihren Erfolg",
+    "imageAlt": "Andreas Babel",
+    "description": {
+      "part1": "Andreas Babel ist seit fast 30 Jahren Experte für Automatisierung, Digitalisierung und Effizienz. Mit seiner Plattformlösung",
+      "part2": "hat er Unternehmen geholfen, bis zu",
+      "part3": "Energie zu sparen, Maschinenausfälle zu halbieren und die Mitarbeitermotivation zu steigern."
+    },
+    "cta": "➡ Mehr über den Autor"
+  },
+  "testimonials": {
+    "title": "Was unsere Kunden sagen",
+    "items": [
+      {
+        "text": "Verpackungsindustrie: 40 % weniger Ausschuss, 15 % Energieeinsparung",
+        "company": "Verpackungsindustrie"
+      },
+      {
+        "text": "Elektronikhersteller: Ausschuss von 10 % auf 3 % reduziert, Wartungskosten -30 %",
+        "company": "Elektronikhersteller"
+      }
+    ]
+  },
+  "cta": {
+    "heading": "Bereit für Ihren digitalen Quantensprung?",
+    "download": "Leitfaden & Checkliste herunterladen",
+    "consult": "Kostenloses Beratungsgespräch vereinbaren"
+  },
+  "footer": {
+    "experience": "Über 30 Jahre Erfahrung",
+    "solutions": "Praxiserprobte Lösungen für den Mittelstand",
+    "madeIn": "Made in Germany: BS-Systeme GmbH, Zorneding",
+    "contact": "Kontakt",
+    "rights": "Alle Rechte vorbehalten."
+  }
+}

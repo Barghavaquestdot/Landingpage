@@ -1,72 +1,62 @@
-// components/HeroSection.tsx
 "use client";
 
 import { motion } from "framer-motion";
 import { FaBook } from "react-icons/fa";
-import Image from "next/image";
+import Button from "./ui/Button";
+import { useTranslation } from "react-i18next";
 
-const Herosection = () => {
+const HeroSection = () => {
+  const { t, ready } = useTranslation("common");
+
+  if (!ready) return null;
+
   return (
-    <section className="relative bg-gradient-to-br from-black via-red-900 to-black text-white w-full min-h-screen flex items-center justify-center px-6 md:px-24 py-32 overflow-hidden"
-     style={{
+    <section
+      className="relative text-white w-full min-h-screen flex items-start justify-center px-6 md:px-24 pt-48 pb-20 bg-black"
+      style={{
         backgroundImage: "url('/section1.jpg')",
         backgroundSize: "cover",
         backgroundPosition: "center",
-        backgroundRepeat: "no-repeat",
-         
-      }}>
-      {/* Floating Background Accent */}
-      <div className="absolute w-96 h-96 bg-red-700 opacity-20 rounded-full blur-3xl top-[-100px] left-[-100px] "></div>
+      }}
+    >
+      <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/40 to-transparent z-0" />
+      <div className="absolute w-96 h-96 bg-red-600 opacity-30 rounded-full blur-3xl top-[-100px] left-[-100px] z-0" />
 
-      {/* Book Icon Top Left */}
-      <div className="absolute top-8 left-6 md:left-16 z-20 flex items-center gap-2 text-black text-3xl font-semibold">
-        <FaBook className="text-3xl text-white" />
-        <span className="font-bold tracking-wide text-white">The Guide</span>
+      <div className="absolute top-6 left-6 md:left-16 z-20 flex items-center gap-2">
+        <FaBook className="text-2xl md:text-3xl text-white" />
+        <span className="text-white font-bold text-lg md:text-2xl">
+          {t("hero.title")}
+        </span>
       </div>
 
-      {/* Hero Content */}
-      <div className="relative z-10 text-center max-w-4xl">
+      <div className="relative z-10 text-center max-w-3xl">
         <motion.h1
           initial={{ opacity: 0, y: -40 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1 }}
-          className="text-4xl md:text-4xl font-extrabold leading-tight mb-6 text-red-400 font-serif"
+          className="text-3xl md:text-5xl font-extrabold leading-snug font-serif mb-6"
         >
-        " The secret code for decision-makers:"
+          <span className="text-red-500">{t("hero.quote")}</span>
           <br />
-          <span className="text-red-400">"Real-time data"</span> "instead of flying blind"
+          <span className="text-white">
+            {t("hero.subtitle.part1")}{" "}
+            <span className="text-red-400">{t("hero.subtitle.part2")}</span>
+          </span>
         </motion.h1>
 
         <motion.p
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.4, duration: 1 }}
-          className="text-lg md:text-2xl text-black mb-10 font-light"
+          transition={{ delay: 0.3, duration: 0.8 }}
+          className="text-white/90 text-base md:text-xl font-light mb-10"
         >
-          How to make precision the strongest force in your company – and save energy, time and money.
+          {t("hero.description")}
         </motion.p>
 
-        <motion.button
-          whileHover={{ scale: 1.05 }}
-          whileTap={{ scale: 0.95 }}
-          transition={{ type: "spring", stiffness: 300 }}
-          className="bg-red-600 hover:bg-red-700 text-white px-8 py-4 rounded-full font-semibold text-lg shadow-lg cursor-pointer"
-        >
-          ➡ Get your guide now
-        </motion.button>
-
-        {/* Guide Visuals */}
-        <motion.div
-          initial={{ opacity: 0, scale: 0.9 }}
-          whileInView={{ opacity: 1, scale: 1 }}
-          viewport={{ once: true }}
-          transition={{ delay: 0.5, duration: 1 }}
-          className="mt-12 flex justify-center"
-        >
-          
-        </motion.div>
+        <Button>{t("hero.cta")}</Button>
       </div>
     </section>
   );
 };
-export default Herosection;
+
+export default HeroSection;

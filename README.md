@@ -1,36 +1,125 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+---
 
-## Getting Started
+```md
+# 📘 The Guide — Data-Driven Decision-Making Landing Page
 
-First, run the development server:
+A high-converting, bilingual (EN/DE) landing page built using **Next.js (App Router)**, **Tailwind CSS**, **Framer Motion**, and **react-i18next** to promote a 40-page decision-making guide.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+---
+
+## ✨ Features
+
+- ✅ **App Router structure** with Client Components
+- 🌐 **Internationalization (i18n)** using `react-i18next`
+- 🪄 Fully responsive and animated with **Framer Motion**
+- 🧩 Modular components: Hero, Problem, Solution, Who Needs It, Guide Preview, Author, Testimonials, and more
+- 🌑 Dark mode layout (black & red theme)
+- 🌍 Language switcher (English ↔ German)
+- 🚀 Optimized with Next.js features: dynamic imports, metadata, image handling
+
+---
+
+## 📁 Folder Structure
+
+<pre>
+.
+├── app/
+│   ├── components/
+│   │   ├── About.tsx
+│   │   ├── CallToAction.tsx
+│   │   ├── Footer.tsx
+│   │   ├── GuidePreview.tsx
+│   │   ├── HeroSection.tsx
+│   │   ├── LanguageSwitcher.tsx
+│   │   ├── ProblemSection.tsx
+│   │   ├── SolutionSection.tsx
+│   │   ├── Testimonials.tsx
+│   │   ├── WhoNeeds.tsx
+│   │   └── ui/
+│   │       └── Button.tsx
+│   ├── utils/
+│   │   └── withTranslationReady.tsx
+│   ├── i18n.ts
+│   └── page.tsx
+├── public/
+│   ├── favicon.ico
+│   ├── section1.jpg
+│   ├── section2.jpg
+│   ├── problem.png
+│   ├── guidesection.png
+│   └── locales/
+│       ├── en/
+│       │   └── common.json
+│       └── de/
+│           └── common.json
+├── styles/
+│   └── globals.css
+├── tailwind.config.ts
+├── next.config.js
+├── tsconfig.json
+└── README.md
+</pre>
+
+---
+
+## 🛠 Tech Stack
+
+- [Next.js](https://nextjs.org/)
+- [TypeScript](https://www.typescriptlang.org/)
+- [Tailwind CSS](https://tailwindcss.com/)
+- [Framer Motion](https://www.framer.com/motion/)
+- [React-i18next](https://react.i18next.com/)
+
+---
+
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 🌐 i18n
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Translation files are stored in:
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- `/public/locales/en/common.json`
+- `/public/locales/de/common.json`
 
-## Learn More
+````
 
-To learn more about Next.js, take a look at the following resources:
+All sections use `t('namespace.key')` or `t('key', { returnObjects: true })` and are wrapped with `withTranslationReady` for hydration-safe rendering.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+---
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## 🚀 Getting Started
 
-## Deploy on Vercel
+```bash
+# Install dependencies
+npm install
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+# Start the development server
+npm run dev
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+# Open in browser
+http://localhost:3000
+````
+
+---
+
+## 📦 Build & Run in Production
+
+```bash
+npm run build
+npm start
+```
+
+---
+
+## 🧩 Metadata Example
+
+```ts
+// app/layout.tsx or app/page.tsx
+export const metadata = {
+  title: "The Guide — Data-Driven Decision Making",
+  description: "Unlock smarter decisions with our 40-page illustrated guide for modern professionals.",
+  icons: {
+    icon: "/favicon.ico",
+  },
+};
+```

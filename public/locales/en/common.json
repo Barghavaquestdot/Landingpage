@@ -1,0 +1,123 @@
+{
+  "hero": {
+    "title": "The Guide",
+    "quote": "“The secret code for decision-makers”",
+    "subtitle": {
+      "part1": "Real-time data",
+      "part2": "instead of flying blind"
+    },
+    "description": "How to make precision the strongest force in your company – and save energy, time, and money.",
+    "cta": "➡ Get your guide now"
+  },
+  "problem": {
+    "title": "Inaccuracy is",
+    "highlight": "leaking your profits",
+    "imageAlt": "Illustration of cost leakage",
+    "points": [
+      "Data is entered manually or not used at all",
+      "Machines run inefficiently and for too long",
+      "Errors, rejects, downtime—and you never know why"
+    ],
+    "warning": "Every small mistake adds up to a huge problem.",
+    "cta": "Know More"
+  },
+  "solution": {
+    "title": "The 40-Page Guide® is your roadmap for maximum efficiency",
+    "description": "Learn step-by-step how to analyze your processes, obtain precise data, and optimize your resource usage – while relieving employees and delighting customers.",
+    "cta": "➡ Request for free Guide",
+    "imageAlt": "Guide Book Cover",
+    "advantages": [
+      {
+        "icon": "list",
+        "title": "Clear roadmap for precise processes"
+      },
+      {
+        "icon": "cogs",
+        "title": "Automated collection and use of real-time data"
+      },
+      {
+        "icon": "leaf",
+        "title": "Reduce energy consumption & costs by up to 25%"
+      },
+      {
+        "icon": "smile",
+        "title": "Motivate employees, retain customers long-term"
+      },
+      {
+        "icon": "bolt",
+        "title": "Meet sustainability & CSRD reporting requirements"
+      }
+    ]
+  },
+  "who": {
+    "title": "🎯 Who is this guide for?",
+    "description": "This guide is built for professionals ready to ditch guesswork and start optimizing with clarity.",
+    "audience": [
+      "Managing directors of small and medium-sized enterprises",
+      "Energy and production managers",
+      "Decision-makers who think about precision and digitalization together"
+    ],
+    "cta": "➡ Feel free to ask"
+  },
+  "guidePreview": {
+    "title": "What to expect – A look at",
+    "highlight": "the guide",
+    "subtitle": "What you can expect on 40 pages",
+    "imageAlt": "Guide Book Preview",
+    "cta": "➡ Book Now",
+    "highlights": [
+      {
+        "title": "Learn to Set the Right Targets",
+        "description": "Why precise KPIs are your single biggest lever for avoiding wasted effort and wasted budget."
+      },
+      {
+        "title": "Correlate Cooling & Pressure Metrics",
+        "description": "How to integrate thermal, hydraulic and energy readings so you spot hidden process bottlenecks immediately."
+      },
+      {
+        "title": "Align Equipment for Peak Throughput",
+        "description": "A proven framework to synchronize machine settings, reduce variability and keep every line running at top speed."
+      },
+      {
+        "title": "Deploy Sensors, AI & Real-Time Dashboards",
+        "description": "Exactly what a modern monitoring stack delivers—and a step-by-step playbook to get yours live in days, not months."
+      }
+    ]
+  },
+  "author": {
+    "title": "About the Author",
+    "subtitle": "Andreas Babel – the data conductor for your success",
+    "imageAlt": "Andreas Babel",
+    "description": {
+      "part1": "Andreas Babel has been an expert in automation, digitalization, and efficiency for almost 30 years. With his platform solution",
+      "part2": "he has helped companies save up to",
+      "part3": "energy, halve machine downtime, and increase employee motivation."
+    },
+    "cta": "➡ Know about Author"
+  },
+  "testimonials": {
+    "title": "What Our Clients Are Saying",
+    "items": [
+      {
+        "text": "Packaging industry: 40% less waste, 15% energy savings",
+        "company": "Packaging Industry"
+      },
+      {
+        "text": "Electronics manufacturer: Scrap reduced from 10% to 3%, maintenance costs -30%",
+        "company": "Electronics Manufacturer"
+      }
+    ]
+  },
+  "cta": {
+    "heading": "Ready for your digital quantum leap?",
+    "download": "Download guide & checklist",
+    "consult": "Arrange a free consultation"
+  },
+  "footer": {
+    "experience": "Over 30 years of experience",
+    "solutions": "Practice-tested solutions for SMEs",
+    "madeIn": "Made in Germany: BS-Systeme GmbH, Zorneding",
+    "contact": "Contact",
+    "rights": "All rights reserved."
+  }
+}

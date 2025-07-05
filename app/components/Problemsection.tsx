@@ -1,88 +1,90 @@
-// components/ProblemSection.tsx
 "use client";
 
 import { motion } from "framer-motion";
 import Image from "next/image";
+import Button from "./ui/Button";
 import SvgBackground from "./SvgBackground";
+import { useTranslation } from "react-i18next";
+import { withTranslationReady } from "../utils/withTranslationReady";
 
- const ProblemSection = () => {
+const ProblemSection = () => {
+  const { t, ready } = useTranslation("common");
+
+  if (!ready) return null;
+
+  const maybePoints = t("problem.points", { returnObjects: true });
+  const painPoints = Array.isArray(maybePoints) ? maybePoints : [];
+
   return (
-    <section className="bg-white text-black w-full py-20 px-6 md:px-24 relative overflow-hidden">
-      <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center gap-12">
-        <SvgBackground/>
-        {/* Fantasy Image on Left */}
+    <section className="relative bg-gradient-to-br from-red-50 to-white py-24 px-6 md:px-24 overflow-hidden">
+      {/* Animated Wave Background */}
+      <SvgBackground />
+
+      <div className="relative z-10 max-w-7xl mx-auto flex flex-col lg:flex-row items-center gap-16">
+        {/* Left: Illustration */}
         <motion.div
-          initial={{ opacity: 0, scale: 0.9, x: -40 }}
-          whileInView={{ opacity: 1, scale: 1, x: 0 }}
+          className="w-full lg:w-1/2 flex justify-center"
+          initial={{ opacity: 0, y: 20, scale: 0.9 }}
+          whileInView={{ opacity: 1, y: 0, scale: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
-          className="w-full md:w-1/2"
         >
-          <Image
-            src="/section2.jpg"
-            alt="Fantasy World"
-            width={600}
-            height={400}
-            className="w-full h-auto object-contain drop-shadow-10xl"
-          />
+          <div className="relative w-[260px] sm:w-[320px] md:w-[380px] lg:w-[460px] aspect-[4/3] drop-shadow-2xl">
+            <Image
+              src="/problem.png"
+              alt={t("problem.imageAlt")}
+              fill
+              className="object-contain"
+              priority
+            />
+          </div>
         </motion.div>
 
-        {/* Content on Right */}
-        <div className="w-full md:w-1/2 relative z-10">
+        {/* Right: Text */}
+        <div className="w-full lg:w-1/2 space-y-8">
           <motion.h2
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
-            className="text-3xl md:text-4xl font-bold mb-8 text-red-400"
+            className="text-4xl md:text-5xl font-extrabold text-gray-900"
+            initial={{ opacity: 0, x: 20 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.6 }}
           >
-            Lack of accuracy costs you money every day!
+            {t("problem.title")}{" "}
+            <span className="text-red-600">{t("problem.highlight")}</span>
           </motion.h2>
 
-          <motion.ul
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-            transition={{ staggerChildren: 0.2 }}
-            className="text-left space-y-6 text-lg md:text-xl"
-          >
-            {["Data is entered manually or not used at all?",
-              "Are machines running inefficiently and for an unnecessarily long time?",
-              "Errors, rejects, downtime – and you don’t know why?"]
-              .map((point, index) => (
-                <motion.li
-                  key={index}
-                  initial={{ opacity: 0, x: -20 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  transition={{ duration: 0.5, delay: index * 0.3 }}
-                  className="relative pl-6 before:absolute before:left-0 before:top-2 "
-                >
-                 ➡ {point}
-                </motion.li>
-              ))}
-          </motion.ul>
+          <ul className="space-y-6">
+            {painPoints.map((point, idx) => (
+              <motion.li
+                key={idx}
+                className="flex items-start gap-4"
+                initial={{ opacity: 0, x: 20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{ delay: idx * 0.2, duration: 0.5 }}
+              >
+                <div className="flex-shrink-0 w-8 h-8 bg-red-600 text-white rounded-full flex items-center justify-center font-semibold">
+                  {idx + 1}
+                </div>
+                <p className="text-lg text-gray-700">{point}</p>
+              </motion.li>
+            ))}
+          </ul>
 
-           <motion.p
+          <motion.p
+            className="text-xl font-semibold text-red-600"
             initial={{ opacity: 0 }}
             animate={{ opacity: [0, 1, 0] }}
-            transition={{ duration: 4, repeat: Infinity, repeatType: "loop" }}
-            className="mt-10 text-2xl font-bold text-red-700 text-center"
+            transition={{ duration: 4, repeat: Infinity }}
           >
-            ➡ Every small mistake adds up to a huge problem.
+            {t("problem.warning")}
           </motion.p>
-           <motion.button
-          whileHover={{ scale: 1.05 }}
-          whileTap={{ scale: 0.95 }}
-          transition={{ type: "spring", stiffness: 300 }}
-          className="bg-red-600 hover:bg-red-700 text-white px-10 py-6 mx-10 my-10 rounded-full font-semibold text-lg shadow-lg cursor-pointer"
-        >
-          Know More
-        </motion.button>
+
+          <div>
+            <Button>{t("problem.cta")}</Button>
+          </div>
         </div>
       </div>
     </section>
   );
 };
 
-export default ProblemSection;
-
+export default withTranslationReady(ProblemSection, "common");
