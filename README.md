@@ -1,6 +1,5 @@
 ---
 
-```md
 # 📘 The Guide — Data-Driven Decision-Making Landing Page
 
 A high-converting, bilingual (EN/DE) landing page built using **Next.js (App Router)**, **Tailwind CSS**, **Framer Motion**, and **react-i18next** to promote a 40-page decision-making guide.
