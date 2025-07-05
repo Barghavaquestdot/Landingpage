@@ -9,11 +9,11 @@ const Herosection = () => {
   return (
     <section className="relative bg-gradient-to-br from-black via-red-900 to-black text-white w-full min-h-screen flex items-center justify-center px-6 md:px-24 py-32 overflow-hidden"
      style={{
-        backgroundImage: "url('/section4.jpg')",
+        backgroundImage: "url('/section1.jpg')",
         backgroundSize: "cover",
         backgroundPosition: "center",
         backgroundRepeat: "no-repeat",
-        
+         
       }}>
       {/* Floating Background Accent */}
       <div className="absolute w-96 h-96 bg-red-700 opacity-20 rounded-full blur-3xl top-[-100px] left-[-100px] "></div>
@@ -30,18 +30,18 @@ const Herosection = () => {
           initial={{ opacity: 0, y: -40 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1 }}
-          className="text-4xl md:text-4xl font-extrabold leading-tight mb-6 text-red-100 font-serif"
+          className="text-4xl md:text-4xl font-extrabold leading-tight mb-6 text-red-400 font-serif"
         >
         " The secret code for decision-makers:"
           <br />
-          <span className="text-red-500">"Real-time data"</span> "instead of flying blind"
+          <span className="text-red-400">"Real-time data"</span> "instead of flying blind"
         </motion.h1>
 
         <motion.p
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.4, duration: 1 }}
-          className="text-lg md:text-2xl text-white mb-10 font-light"
+          className="text-lg md:text-2xl text-black mb-10 font-light"
         >
           How to make precision the strongest force in your company – and save energy, time and money.
         </motion.p>

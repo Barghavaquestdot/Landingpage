@@ -27,41 +27,34 @@ const itemVariants = {
 
 const GuidePreview = () => {
   return (
-    <section className="relative bg-black text-white py-28 px-4 sm:px-6 md:px-32 overflow-hidden">
+    <section className="relative bg-black text-white pt-28 pb-12 px-4 sm:px-6 md:px-10 overflow-hidden">
       {/* Background Gradient Circles */}
       <div className="absolute inset-0 pointer-events-none z-0">
         <div className="absolute w-80 h-80 bg-red-400 opacity-10 rounded-full blur-3xl top-[-80px] left-[-80px] animate-pulse"></div>
         <div className="absolute w-80 h-80 bg-red-600 opacity-10 rounded-full blur-3xl bottom-[-80px] right-[-80px] animate-pulse"></div>
       </div>
 
-      {/* Half-Circle Image for Desktop */}
-      <div className="hidden md:block absolute bottom-0 left-0 w-[500px] h-[500px] z-0 overflow-hidden">
-        <div className="w-full h-full" style={{ clipPath: "circle(100% at 0% 100%)" }}>
+      {/* Half-Circle Guide Image - same for mobile and desktop */}
+      <div className="absolute bottom-0 left-0 w-[520px] h-[520px] z-0">
+        <div
+          className="w-full h-full opacity-80"
+          style={{
+            clipPath: "circle(100% at 0% 100%)",
+          }}
+        >
           <Image
             src="/guidesection.jpg"
-            alt="Guide section illustration"
-            width={500}
-            height={500}
-            className="object-cover w-full h-full"
+            alt="Guide Background"
+            width={520}
+            height={520}
+            className="object-cover w-full h-full opacity-100"
+            priority
           />
         </div>
       </div>
 
-      {/* Image at top for mobile */}
-      <div className="md:hidden mb-8">
-        <div className="w-[280px] h-[280px] mx-auto overflow-hidden rounded-full">
-          <Image
-            src="/guidesection.jpg"
-            alt="Guide section mobile"
-            width={280}
-            height={280}
-            className="object-cover w-full h-full"
-          />
-        </div>
-      </div>
-
-      {/* Content */}
-      <div className="relative z-10 max-w-5xl mx-auto md:ml-[340px]">
+      {/* Content block always shifted right */}
+      <div className="relative z-10 max-w-4xl mx-auto md:ml-[460px]">
         {/* Heading */}
         <motion.h2
           initial={{ opacity: 0, scale: 0.8 }}
@@ -85,7 +78,7 @@ const GuidePreview = () => {
           What you can expect on 40 pages
         </motion.p>
 
-        {/* Highlights */}
+        {/* Highlights List */}
         <motion.ul
           variants={containerVariants}
           initial="hidden"
@@ -105,8 +98,8 @@ const GuidePreview = () => {
           ))}
         </motion.ul>
 
-        {/* Button - slightly right */}
-        <div className="mt-10 pl-2 sm:pl-4 md:pl-10">
+        {/* Book Now Button shifted right */}
+        <div className="mt-10 pl-6 sm:pl-10 md:pl-20">
           <motion.button
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
