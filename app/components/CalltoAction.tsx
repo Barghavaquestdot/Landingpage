@@ -28,12 +28,12 @@ import { FaDownload, FaPhoneAlt } from "react-icons/fa";
           className="flex flex-col md:flex-row justify-center gap-6"
         >
           {/* Option 1 */}
-          <button className="flex items-center justify-center gap-3 bg-gradient-to-r from-red-500 to-red-700 hover:from-red-600 hover:to-red-800 text-white font-semibold text-lg px-8 py-4 rounded-full shadow-md transition-all">
+          <button className="flex items-center justify-center gap-3 bg-gradient-to-r from-red-500 to-red-700 hover:from-red-600 hover:to-red-800 text-white font-semibold text-lg px-8 py-4 rounded-full shadow-md transition-all cursor-pointer">
             <FaDownload /> Download guide & checklist
           </button>
 
           {/* Option 2 */}
-          <button className="flex items-center justify-center gap-3 border-2 border-red-600 text-red-600 hover:bg-red-600 hover:text-white font-semibold text-lg px-8 py-4 rounded-full shadow-md transition-all">
+          <button className="flex items-center justify-center gap-3 border-2 border-red-600 text-red-600 hover:bg-red-600 hover:text-white font-semibold text-lg px-8 py-4 rounded-full shadow-md transition-all cursor-pointer">
             <FaPhoneAlt /> Arrange a free initial consultation
           </button>
         </motion.div>

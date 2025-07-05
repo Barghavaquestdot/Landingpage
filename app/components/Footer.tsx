@@ -27,13 +27,23 @@ import { FaEnvelope, FaGlobe, FaPhone } from "react-icons/fa";
         </div>
 
         {/* Contact Info */}
+        {/* Copyright */}
+        <div className="text-xs text-gray-400 text-center md:text-right flex flex-col justify-center">
+          <p>© {new Date().getFullYear()}  BS-Systeme GmbH. All rights reserved.</p>
+        </div>
+
         <div className="space-y-2">
           <h4 className="text-lg font-semibold mb-2">Contact</h4>
           <p className="flex items-center gap-2 text-sm">
             <FaEnvelope className="text-red-400" /> info@bs-systeme.de
           </p>
           <p className="flex items-center gap-2 text-sm">
-            <FaGlobe className="text-red-400" /> www.bs-systeme.de
+            <FaGlobe className="text-red-400" /> <a
+              href="http://bs-syteme.de/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-red transition"
+            > www.bs-systeme.de</a>
           </p>
           <p className="flex items-center gap-2 text-sm">
             <FaPhone className="text-red-400"/> +49 89 413 291 000
@@ -41,9 +51,7 @@ import { FaEnvelope, FaGlobe, FaPhone } from "react-icons/fa";
         </div>
 
         {/* Copyright */}
-        <div className="text-xs text-gray-400 text-center md:text-right flex flex-col justify-end">
-          <p>© {new Date().getFullYear()}  BS-Systeme GmbH. All rights reserved.</p>
-        </div>
+      
       </motion.div>
     </footer>
   );

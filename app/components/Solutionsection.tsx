@@ -75,12 +75,12 @@ const SolutionSection = () => {
         </div>
 
         <motion.button
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.5 }}
-          className="mt-12 bg-gradient-to-r from-red-500 to-black hover:from-black hover:to-red-500 px-8 py-4 text-white font-bold text-lg rounded-full shadow-xl"
+          whileHover={{ scale: 1.05 }}
+          whileTap={{ scale: 0.95 }}
+          transition={{ type: "spring", stiffness: 300 }}
+          className="bg-red-500 hover:bg-red-700 text-white px-6 py-4 my-5 rounded-full font-semibold text-lg shadow-lg cursor-pointer"
         >
-          ➡ Request your free guide now
+          ➡ Request for free Guide
         </motion.button>
       </div>
     </section>

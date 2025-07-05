@@ -84,6 +84,14 @@ const WhoNeeds = () => {
     </motion.div>
   ))}
 </motion.div>
+<motion.button
+          whileHover={{ scale: 1.05 }}
+          whileTap={{ scale: 0.95 }}
+          transition={{ type: "spring", stiffness: 300 }}
+          className="bg-red-500 hover:bg-red-700 text-white px-6 py-4 my-5 rounded-full font-semibold text-lg shadow-lg cursor-pointer"
+        >
+          ➡ Feel free to ask
+        </motion.button>
 
       </div>
     </section>

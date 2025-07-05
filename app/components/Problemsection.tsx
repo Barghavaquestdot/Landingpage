@@ -3,11 +3,13 @@
 
 import { motion } from "framer-motion";
 import Image from "next/image";
+import SvgBackground from "./SvgBackground";
 
  const ProblemSection = () => {
   return (
-    <section className="bg-gray-300 text-black w-full py-20 px-6 md:px-24 relative overflow-hidden">
+    <section className="bg-white text-black w-full py-20 px-6 md:px-24 relative overflow-hidden">
       <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center gap-12">
+        <SvgBackground/>
         {/* Fantasy Image on Left */}
         <motion.div
           initial={{ opacity: 0, scale: 0.9, x: -40 }}
@@ -21,7 +23,7 @@ import Image from "next/image";
             alt="Fantasy World"
             width={600}
             height={400}
-            className="w-full h-auto object-contain drop-shadow-2xl"
+            className="w-full h-auto object-contain drop-shadow-10xl"
           />
         </motion.div>
 
@@ -32,7 +34,7 @@ import Image from "next/image";
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
-            className="text-3xl md:text-4xl font-bold mb-8"
+            className="text-3xl md:text-4xl font-bold mb-8 text-red-400"
           >
             Lack of accuracy costs you money every day!
           </motion.h2>
@@ -53,9 +55,9 @@ import Image from "next/image";
                   initial={{ opacity: 0, x: -20 }}
                   whileInView={{ opacity: 1, x: 0 }}
                   transition={{ duration: 0.5, delay: index * 0.3 }}
-                  className="relative pl-6 before:absolute before:left-0 before:top-2 before:w-3 before:h-3 before:bg-red-400 before:rounded-full"
+                  className="relative pl-6 before:absolute before:left-0 before:top-2 "
                 >
-                  {point}
+                 ➡ {point}
                 </motion.li>
               ))}
           </motion.ul>
@@ -64,10 +66,18 @@ import Image from "next/image";
             initial={{ opacity: 0 }}
             animate={{ opacity: [0, 1, 0] }}
             transition={{ duration: 4, repeat: Infinity, repeatType: "loop" }}
-            className="mt-10 text-2xl font-bold text-red-400 text-center"
+            className="mt-10 text-2xl font-bold text-red-700 text-center"
           >
             ➡ Every small mistake adds up to a huge problem.
           </motion.p>
+           <motion.button
+          whileHover={{ scale: 1.05 }}
+          whileTap={{ scale: 0.95 }}
+          transition={{ type: "spring", stiffness: 300 }}
+          className="bg-red-600 hover:bg-red-700 text-white px-10 py-6 mx-10 my-10 rounded-full font-semibold text-lg shadow-lg cursor-pointer"
+        >
+          Know More
+        </motion.button>
         </div>
       </div>
     </section>
