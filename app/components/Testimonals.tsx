@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { FaQuoteLeft } from "react-icons/fa";
+import { FaQuoteLeft, FaStar } from "react-icons/fa";
 
 const testimonials = [
   {
@@ -18,25 +18,31 @@ const testimonials = [
 const TestimonialsSection = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
 
-  // Auto-switch testimonials every 10 seconds
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentIndex((prev) => (prev + 1) % testimonials.length);
-    }, 5000); // 10 seconds
+    }, 5000);
     return () => clearInterval(interval);
   }, []);
 
   return (
-    <section className="bg-gray-100 text-gray-900 py-5 px-6 md:px-20">
+    <section className="bg-gray-100 text-gray-900 py-20 px-6 md:px-20">
       <div className="max-w-4xl mx-auto text-center">
         <motion.h2
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
-          className="text-4xl md:text-5xl font-bold mb-12"
+          className="text-4xl md:text-5xl font-bold mb-4"
         >
           What Our Clients Are Saying
         </motion.h2>
+
+        {/* ⭐️ 5 Golden Stars */}
+        <div className="flex justify-center gap-2 mb-10">
+          {Array.from({ length: 5 }).map((_, index) => (
+            <FaStar key={index} className="text-yellow-400 text-xl" />
+          ))}
+        </div>
 
         <div className="relative h-52 flex items-center justify-center">
           <AnimatePresence mode="wait">

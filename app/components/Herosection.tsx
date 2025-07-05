@@ -9,11 +9,11 @@ const Herosection = () => {
   return (
     <section className="relative bg-gradient-to-br from-black via-red-900 to-black text-white w-full min-h-screen flex items-center justify-center px-6 md:px-24 py-32 overflow-hidden"
      style={{
-        backgroundImage: "url('/openbook2.jpg')",
+        backgroundImage: "url('/section4.jpg')",
         backgroundSize: "cover",
         backgroundPosition: "center",
         backgroundRepeat: "no-repeat",
-        opacity:0.9
+        
       }}>
       {/* Floating Background Accent */}
       <div className="absolute w-96 h-96 bg-red-700 opacity-20 rounded-full blur-3xl top-[-100px] left-[-100px] "></div>

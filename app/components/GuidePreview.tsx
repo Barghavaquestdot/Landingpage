@@ -1,4 +1,3 @@
-// components/GuidePreview.tsx
 "use client";
 
 import { motion } from "framer-motion";
@@ -28,94 +27,95 @@ const itemVariants = {
 
 const GuidePreview = () => {
   return (
-    <section className="relative bg-black text-white py-28 px-6 md:px-32 overflow-hidden">
-      {/* Floating Circle Backgrounds */}
+    <section className="relative bg-black text-white py-28 px-4 sm:px-6 md:px-32 overflow-hidden">
+      {/* Background Gradient Circles */}
       <div className="absolute inset-0 pointer-events-none z-0">
-        <div className="absolute w-96 h-96 bg-red-400 opacity-10 rounded-full blur-3xl top-[-80px] left-[-80px] animate-pulse"></div>
-        <div className="absolute w-96 h-96 bg-red-600 opacity-10 rounded-full blur-3xl bottom-[-80px] right-[-80px] animate-pulse"></div>
+        <div className="absolute w-80 h-80 bg-red-400 opacity-10 rounded-full blur-3xl top-[-80px] left-[-80px] animate-pulse"></div>
+        <div className="absolute w-80 h-80 bg-red-600 opacity-10 rounded-full blur-3xl bottom-[-80px] right-[-80px] animate-pulse"></div>
       </div>
 
-      {/* Decorative Floating Images */}
-      <div className="hidden md:block absolute top-24 left-0 z-0">
-        <motion.div
-          initial={{ opacity: 0, x: -50 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          transition={{ duration: 1 }}
-        >
+      {/* Half-Circle Image for Desktop */}
+      <div className="hidden md:block absolute bottom-0 left-0 w-[500px] h-[500px] z-0 overflow-hidden">
+        <div className="w-full h-full" style={{ clipPath: "circle(100% at 0% 100%)" }}>
           <Image
-            src="/left.jpg" // replace with your image path
-            alt="Left illustration"
-            width={250}
-            height={250}
-            className="object-contain animate-float"
+            src="/guidesection.jpg"
+            alt="Guide section illustration"
+            width={500}
+            height={500}
+            className="object-cover w-full h-full"
           />
-        </motion.div>
-      </div>
-      <div className="hidden md:block absolute bottom-24 right-0 z-0">
-        <motion.div
-          initial={{ opacity: 0, x: 50 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          transition={{ duration: 1 }}
-        >
-          <Image
-            src="/right.jpg" // replace with your image path
-            alt="Right illustration"
-            width={250}
-            height={250}
-            className="object-contain animate-float-slow"
-          />
-        </motion.div>
+        </div>
       </div>
 
-      {/* Main Content */}
-      <div className="relative z-10 max-w-5xl mx-auto text-center">
+      {/* Image at top for mobile */}
+      <div className="md:hidden mb-8">
+        <div className="w-[280px] h-[280px] mx-auto overflow-hidden rounded-full">
+          <Image
+            src="/guidesection.jpg"
+            alt="Guide section mobile"
+            width={280}
+            height={280}
+            className="object-cover w-full h-full"
+          />
+        </div>
+      </div>
+
+      {/* Content */}
+      <div className="relative z-10 max-w-5xl mx-auto md:ml-[340px]">
+        {/* Heading */}
         <motion.h2
           initial={{ opacity: 0, scale: 0.8 }}
           whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 0.7 }}
-          className="text-4xl md:text-5xl font-extrabold mb-6 animate-pulse"
+          className="text-3xl sm:text-4xl md:text-5xl font-extrabold mb-6 animate-pulse text-left"
         >
-          📘 What to expect – A look at the guide
+          📘 What to expect – A look at <br />
+          <span className="block text-center text-red-400">the guide</span>
         </motion.h2>
 
+        {/* Subheading */}
         <motion.p
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ delay: 0.3, duration: 0.8 }}
-          className="text-lg md:text-xl text-gray-300 mb-12"
+          className="text-base sm:text-lg md:text-xl text-gray-300 mb-10 md:pl-6"
         >
           What you can expect on 40 pages
         </motion.p>
 
+        {/* Highlights */}
         <motion.ul
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
-          className="text-left space-y-8 text-lg md:text-xl max-w-3xl mx-auto"
+          className="space-y-6 sm:space-y-8 text-left text-base sm:text-lg md:text-xl max-w-3xl md:pl-6"
         >
           {highlights.map((item, index) => (
             <motion.li
               key={index}
               variants={itemVariants}
-              className="flex items-start gap-4 hover:scale-[1.02] transition-transform"
+              className="flex items-start gap-3 hover:scale-[1.02] transition-transform"
             >
-              <FaRegCheckSquare className="text-red-400 mt-2" />
-              <span className="text-white whitespace-pre-line">{item}</span>
+              <FaRegCheckSquare className="text-red-400 mt-1" />
+              <span className="whitespace-pre-line">{item}</span>
             </motion.li>
           ))}
         </motion.ul>
 
-        <motion.button
-          whileHover={{ scale: 1.05 }}
-          whileTap={{ scale: 0.95 }}
-          transition={{ type: "spring", stiffness: 300 }}
-          className="bg-red-500 hover:bg-red-700 text-white px-8 py-4 my-10 rounded-full font-semibold text-lg shadow-lg cursor-pointer"
-        >
-          ➡ Book Now
-        </motion.button>
+        {/* Button - slightly right */}
+        <div className="mt-10 pl-2 sm:pl-4 md:pl-10">
+          <motion.button
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+            transition={{ type: "spring", stiffness: 300 }}
+            className="bg-red-500 hover:bg-red-700 text-white px-8 py-4 rounded-full font-semibold text-lg shadow-lg cursor-pointer"
+          >
+            ➡ Book Now
+          </motion.button>
+        </div>
       </div>
     </section>
   );

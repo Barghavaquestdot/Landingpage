@@ -1,9 +1,9 @@
-// components/SolutionSection.tsx
 "use client";
 
 import { motion } from "framer-motion";
 import PulsingDataFlowNetwork from "./PulsingDataFlowNetwork";
 import { FaCogs, FaLeaf, FaSmile, FaListAlt, FaBolt } from "react-icons/fa";
+import Image from "next/image";
 
 const advantages = [
   {
@@ -31,12 +31,24 @@ const advantages = [
 const SolutionSection = () => {
   return (
     <section className="relative bg-black text-white py-24 px-6 md:px-20 overflow-hidden">
-      {/* Animated Network in Background */}
+      {/* Left: Animated Network Background */}
       <div className="absolute inset-0 z-0 opacity-40 pointer-events-none">
-        <PulsingDataFlowNetwork/>
+        <PulsingDataFlowNetwork />
       </div>
 
-      {/* Main Content */}
+      {/* Right: Background Image (blurred) */}
+      <div className="absolute top-0 right-0 w-1/2 h-full z-0 pointer-events-none hidden md:block">
+        <div className="relative w-full h-full">
+          <Image
+            src="/section3.jpg" // Replace with your actual image path
+            alt="Blurred background"
+            fill
+            className="object-cover  opacity-60"
+          />
+        </div>
+      </div>
+
+      {/* Content */}
       <div className="relative z-10 max-w-5xl mx-auto text-center">
         <motion.h2
           initial={{ opacity: 0, y: 30 }}
