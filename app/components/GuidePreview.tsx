@@ -43,14 +43,14 @@ const GuidePreview = () => {
           {/* 📘 Book Image - Enlarged */}
           <div className="w-full lg:w-1/2 flex justify-center lg:justify-start">
             <div className="relative w-[320px] sm:w-[420px] md:w-[500px] lg:w-[560px] xl:w-[600px]">
-              <Image
-                src="/guidesection.png"
-                alt={t("guidePreview.imageAlt")}
-                width={600}
-                height={800}
-                className="w-full h-auto object-contain rounded-xl shadow-2xl"
-                priority
-              />
+               <Image
+                    src="/guidesection.png"
+                    alt={t("guidePreview.imageAlt")}
+                   width={600}
+                  height={800}
+                  className="absolute -top-15 -left-22 object-contain rounded-xl shadow-2xl"
+                   priority
+               />
             </div>
           </div>
 

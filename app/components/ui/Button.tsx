@@ -19,9 +19,9 @@ const Button = ({
   type = "button",
 }: Props) => {
   const baseStyles =
-    "rounded-full px-6 py-3 md:px-8 md:py-4 font-semibold shadow-md transition duration-300 text-lg whitespace-nowrap";
+    "rounded-full px-6 py-3 md:px-8 md:py-4 font-semibold shadow-md transition duration-300 text-lg whitespace-nowrap cursor-pointer";
   const variants = {
-    primary: "bg-red-600 hover:bg-red-700 text-white",
+    primary: "bg-red-500 hover:bg-red-700 text-white",
     outline: "border-2 border-red-600 text-red-600 hover:bg-red-600 hover:text-white",
   };
 
