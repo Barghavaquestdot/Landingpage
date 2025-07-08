@@ -22,10 +22,10 @@ export default function LanguageSwitcher() {
   return (
     <button
       onClick={toggleLanguage}
-      className="fixed top-4 right-4 z-50 flex items-center gap-2 px-3 py-1.5 bg-black/80 hover:bg-red-600 transition text-white text-sm font-semibold rounded-full shadow-lg border border-white/10 backdrop-blur-md"
+      className="fixed top-4 right-4 z-50 flex items-center gap-2 px-3 py-1.5 bg-black/80 hover:bg-[#d0181c] transition text-white text-sm font-semibold rounded-full shadow-lg border border-white/10 backdrop-blur-md"
       aria-label="Toggle Language"
     >
-      <FaGlobe className="text-red-400" />
+      <FaGlobe className="text-[#d0181c]" />
       {i18n.language === "en" ? "DE" : "EN"}
     </button>
   );

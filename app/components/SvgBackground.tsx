@@ -29,7 +29,7 @@ const SvgBackground = () => {
 
       {/* Blurred glowing circles */}
       <div className="absolute top-[-100px] left-[-100px] w-[300px] h-[300px] bg-pink-500 rounded-full blur-[120px] opacity-20 animate-pulse"></div>
-      <div className="absolute bottom-[-80px] right-[-80px] w-[240px] h-[240px] bg-red-600 rounded-full blur-[100px] opacity-20 animate-pulse"></div>
+      <div className="absolute bottom-[-80px] right-[-80px] w-[240px] h-[240px] bg-[#d0181c] rounded-full blur-[100px] opacity-20 animate-pulse"></div>
     </div>
   );
 };

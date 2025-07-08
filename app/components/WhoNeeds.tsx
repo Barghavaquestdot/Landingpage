@@ -84,7 +84,7 @@ const WhoNeeds = () => {
                 index === 2 ? "md:col-span-2 mx-auto max-w-xl" : ""
               }`}
             >
-              <FaCheck className="text-red-600 text-xl mt-1" />
+              <FaCheck className="text-[#d0181c] text-xl mt-1" />
               <span className="text-lg font-medium text-gray-800">{item}</span>
             </motion.div>
           ))}

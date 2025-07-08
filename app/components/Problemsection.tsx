@@ -61,7 +61,7 @@ const ProblemSection = () => {
                 whileInView={{ opacity: 1, x: 0 }}
                 transition={{ delay: idx * 0.2, duration: 0.5 }}
               >
-                <div className="flex-shrink-0 w-8 h-8 bg-red-600 text-white rounded-full flex items-center justify-center font-semibold">
+                <div className="flex-shrink-0 w-8 h-8 bg-[#d0181c] text-white rounded-full flex items-center justify-center font-semibold">
                   {idx + 1}
                 </div>
                 <p className="text-lg text-gray-700">{point}</p>
@@ -70,7 +70,7 @@ const ProblemSection = () => {
           </ul>
 
           <motion.p
-            className="text-xl font-semibold text-red-600"
+            className="text-xl font-semibold text-[#d0181c]"
             initial={{ opacity: 0 }}
             animate={{ opacity: [0, 1, 0] }}
             transition={{ duration: 4, repeat: Infinity }}

@@ -21,8 +21,8 @@ const GuidePreview = () => {
     <section className="relative bg-black text-white py-28 px-6 md:px-20 overflow-hidden">
       {/* Background Effects */}
       <div className="absolute inset-0 pointer-events-none z-0">
-        <div className="absolute w-[420px] h-[420px] bg-red-400 opacity-10 rounded-full blur-3xl top-[-80px] left-[-80px] animate-pulse" />
-        <div className="absolute w-[420px] h-[420px] bg-red-600 opacity-10 rounded-full blur-3xl bottom-[-80px] right-[-80px] animate-pulse" />
+        <div className="absolute w-[420px] h-[420px] bg-[#d0181c] opacity-10 rounded-full blur-3xl top-[-80px] left-[-80px] animate-pulse" />
+        <div className="absolute w-[420px] h-[420px] bg-[#d0181c] opacity-10 rounded-full blur-3xl bottom-[-80px] right-[-80px] animate-pulse" />
       </div>
 
       <div className="relative z-10 max-w-7xl mx-auto space-y-16">
@@ -35,7 +35,7 @@ const GuidePreview = () => {
           className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-center"
         >
           📘 {t("guidePreview.title")}{" "}
-          <span className="text-red-400">{t("guidePreview.highlight")}</span>
+          <span className="text-[#d0181c]">{t("guidePreview.highlight")}</span>
         </motion.h2>
 
         {/* Layout */}
@@ -66,7 +66,7 @@ const GuidePreview = () => {
               {t("guidePreview.subtitle")}
             </motion.p>
 
-            <div className="space-y-6 border-l border-red-500 pl-6">
+            <div className="space-y-6 border-l border-[#d0181c]0 pl-6">
               {highlights.map((item, index) => (
                 <div key={index} className="space-y-1">
                   <h3 className="text-white text-lg md:text-xl font-semibold">

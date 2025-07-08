@@ -20,7 +20,7 @@ const HeroSection = () => {
       }}
     >
       <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/40 to-transparent z-0" />
-      <div className="absolute w-96 h-96 bg-red-600 opacity-30 rounded-full blur-3xl top-[-100px] left-[-100px] z-0" />
+      <div className="absolute w-96 h-96 bg-[#d0181c] opacity-30 rounded-full blur-3xl top-[-100px] left-[-100px] z-0" />
 
       <div className="absolute top-6 left-6 md:left-16 z-20 flex items-center gap-2">
         <FaBook className="text-2xl md:text-3xl text-white" />
@@ -36,11 +36,11 @@ const HeroSection = () => {
           transition={{ duration: 1 }}
           className="text-3xl md:text-5xl font-extrabold leading-snug font-serif mb-6"
         >
-          <span className="text-red-500">{t("hero.quote")}</span>
+          <span className="text-[#d0181c]">{t("hero.quote")}</span>
           <br />
           <span className="text-white">
             {t("hero.subtitle.part1")}{" "}
-            <span className="text-red-400">{t("hero.subtitle.part2")}</span>
+            <span className="text-[#d0181c]">{t("hero.subtitle.part2")}</span>
           </span>
         </motion.h1>
 
