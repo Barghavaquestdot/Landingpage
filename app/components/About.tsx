@@ -11,7 +11,7 @@ const AuthorSection = () => {
 
   return (
     <section className="bg-gray-100 text-black py-20 px-6 md:px-32">
-      <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center gap-16">
+      <div className="max-w-7xl mx-auto flex flex-col md:flex-row-reverse items-center gap-16">
         {/* Author Image */}
         <motion.div
           initial={{ opacity: 0, rotate: -10, scale: 0.7 }}
