@@ -14,6 +14,7 @@ import CallToActionSectionBase from "./components/CalltoAction";
 import FooterBase from "./components/Footer";
 import TestimonialsSectionBase from "./components/Testimonals";
 import LanguageSwitcher from "./components/LanguageSwitcher";
+import CompanySectionBase from "./components/AboutCompany"
 import { useTranslation } from "react-i18next";
 
 const HeroSection = withTranslationReady(HeroSectionBase, "common");
@@ -25,6 +26,7 @@ const AuthorSection = withTranslationReady(AuthorSectionBase, "common");
 const CallToActionSection = withTranslationReady(CallToActionSectionBase, "common");
 const Footer = withTranslationReady(FooterBase, "common");
 const TestimonialsSection = withTranslationReady(TestimonialsSectionBase, "common");
+const CompanySection = withTranslationReady(CompanySectionBase, "common");
 
 export default function Home() {
   const { i18n } = useTranslation();
@@ -38,6 +40,7 @@ export default function Home() {
       <WhoNeeds key={i18n.language + '-who'} />
       <GuidePreview key={i18n.language + '-guide'} />
       <AuthorSection key={i18n.language + '-author'} />
+      <CompanySection key={i18n.language + '-company'}/>
       <TestimonialsSection key={i18n.language + '-testimonials'} />
       <CallToActionSection key={i18n.language + '-cta'} />
       <Footer key={i18n.language + '-footer'} />

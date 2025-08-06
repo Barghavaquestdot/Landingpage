@@ -3,84 +3,93 @@
     "title": "The Guide",
     "quote": "“The secret code for decision-makers”",
     "subtitle": {
-      "part1": "Real-time data",
+      "part1": "Save Energy, Time, and Money with Real-Time Control",
       "part2": "instead of flying blind"
     },
-    "description": "How to make precision the strongest force in your company – and save energy, time, and money.",
+   "description": "Make informed decisions based on precise, up-to-date real-time data rather than vague guesses.\nThe comprehensive guide \"The Secret Code for Decision Makers\" offers practical, inspiring insights on how to sustainably optimize complex processes, utilize valuable resources with maximum efficiency, and achieve your business goals with laser focus.",
     "cta": "➡ Get your guide now"
   },
   "problem": {
-    "title": "Inaccuracy is",
+    "title": "Why Precise Control Makes All the Difference",
     "highlight": "leaking your profits",
     "imageAlt": "Illustration of cost leakage",
     "points": [
-      "Data is entered manually or not used at all",
-      "Machines run inefficiently and for too long",
-      "Errors, rejects, downtime—and you never know why"
-    ],
+      "Automated, intelligent data collection",
+      "Optimized, flexible machine control",
+      "Clear visibility and effortless control "
+      ],
+    "point1": "Automated, intelligent data collection not only gives you full transparency but\nalso frees up precious time. Your team can focus on what truly matters while\nroutine tasks run smoothly, creating much-needed breathing room.",
+    "point2": "Optimized, flexible machine control ensures even smoother processes and\nminimizes unnecessary downtime—delivering tangible relief and a renewed\nsense of security in daily operations.",
+    "point3": "Clear visibility and effortless control of losses enable you to make forward-\nlooking decisions based on hard, objective facts, foster responsible team\nbehavior, and collectively achieve impressive improvements.",
     "warning": "Every small mistake adds up to a huge problem.",
     "cta": "Know More"
   },
   "solution": {
-    "title": "The 40-Page Guide® is your roadmap for maximum efficiency",
-    "description": "Learn step-by-step how to analyze your processes, obtain precise data, and optimize your resource usage – while relieving employees and delighting customers.",
+    "title": "Your Versatile Toolbox for Measurable Progress",
+    "description": "This guide offers proven, hands-on strategies and clearly structured, tested recommendations that can be seamlessly integrated into your demanding daily\nworkflow:",
     "cta": "➡ Request for free Guide",
     "imageAlt": "Guide Book Cover",
     "advantages": [
       {
         "icon": "list",
-        "title": "Clear roadmap for precise processes"
+        "title": "Leverage real-time data"
       },
       {
         "icon": "cogs",
-        "title": "Automated collection and use of real-time data"
+        "title": "Achieve up to 25% verifiable energy savings"
       },
       {
         "icon": "leaf",
-        "title": "Reduce energy consumption & costs by up to 25%"
+        "title": "Lighten and empower your teams"
       },
       {
         "icon": "smile",
-        "title": "Motivate employees, retain customers long-term"
+        "title": "Boost customer satisfaction"
       },
       {
         "icon": "bolt",
-        "title": "Meet sustainability & CSRD reporting requirements"
+        "title": "Actively live sustainability"
       }
     ]
   },
   "who": {
     "title": "🎯 Who is this guide for?",
-    "description": "This guide is built for professionals ready to ditch guesswork and start optimizing with clarity.",
+    "description": "This comprehensive knowledge is aimed at anyone who wants to optimize theircomplex processes in a measurable, future-proof way",
     "audience": [
-      "Managing directors of small and medium-sized enterprises",
-      "Energy and production managers",
-      "Decision-makers who think about precision and digitalization together"
+      "Executive management and dedicated technical leadership",
+      "Experienced energy and production managers",
+      "Directors of advanced digitalization and sustainable efficiency"
     ],
+    "footer":"If you’re aiming for concrete, visible results, this guide provides you with a valuable,practice-ready foundation.",
     "cta": "➡ Feel free to ask"
   },
   "guidePreview": {
     "title": "What to expect – A look at",
     "highlight": "the guide",
-    "subtitle": "What you can expect on 40 pages",
+    "subtitle": "A Sneak Peek Inside the Guide – Key Focus Areas (40Pages)",
     "imageAlt": "Guide Book Preview",
     "cta": "➡ Book Now",
     "highlights": [
       {
-        "title": "Learn to Set the Right Targets",
-        "description": "Why precise KPIs are your single biggest lever for avoiding wasted effort and wasted budget."
+        "title": "Goal Setting & Transparent Metrics",
+        "description": "Define clear, relevant KPIs—and achieve up to 25% energy savings. The rightmetrics give you full transparency and save you valuable time."
       },
       {
-        "title": "Correlate Cooling & Pressure Metrics",
-        "description": "How to integrate thermal, hydraulic and energy readings so you spot hidden process bottlenecks immediately."
+        "title": "Uncover Hidden Potential",
+        "description": "Learn how systematic analysis of detailed cooling and pressure data revealsunseen efficiency reserves to cut costs sustainably."
       },
       {
-        "title": "Align Equipment for Peak Throughput",
-        "description": "A proven framework to synchronize machine settings, reduce variability and keep every line running at top speed."
+        "title": "Optimize Overall Machine Performance",
+        "description": " Proven concepts show how fine-tuned machine utilization boosts throughput and prevents costly production downtime."
       },
       {
-        "title": "Deploy Sensors, AI & Real-Time Dashboards",
-        "description": "Exactly what a modern monitoring stack delivers—and a step-by-step playbook to get yours live in days, not months."
+        "title": "Smart Technology Integration",
+        "description": "Harness cutting-edge sensors, artificial intelligence, and innovative dashboards to automatically analyze data and make informed real-time decisions."
+      },
+      {
+        "title":"Practical, Versatile Recommendations",
+        "description":"Benefit from field-tested methods that have already helped numerous companies significantly reduce energy costs and sustainably improve performance."
+
       }
     ]
   },
@@ -94,6 +103,16 @@
       "part3": "energy, halve machine downtime, and increase employee motivation."
     },
     "cta": "➡ Know about Author"
+  },
+   "company": {
+    "title": "About the Company",
+    "subtitle": "BS-Systeme GmbH – Your Expert Partner for Sustainable Energy Optimization & Innovative Process Automation",
+    "description": {
+      "part1": "Over 30 years of comprehensive expertise in energy efficiency and sustainable process optimization",
+      "part2": "Proven, intelligent solutions for SMEs to effectively cut energy costs and sustainably boost production performance",
+      "part3": "Made in Germany—tested, premium quality for long-lasting automation and industrialized digitalization"
+    },
+    "cta": "➡ Know More"
   },
   "testimonials": {
     "title": "What Our Clients Are Saying",

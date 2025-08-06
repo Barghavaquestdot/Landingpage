@@ -48,7 +48,7 @@ const GuidePreview = () => {
                     alt={t("guidePreview.imageAlt")}
                    width={600}
                   height={800}
-                  className="absolute -top-80 -left-20  object-contain rounded-xl shadow-2xl "
+                  className="absolute -top-80 -left-1  -rotate-25 object-contain rounded-xl shadow-2xl "
                    priority
                />
             </div>

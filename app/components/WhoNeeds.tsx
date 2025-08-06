@@ -89,6 +89,15 @@ const WhoNeeds = () => {
             </motion.div>
           ))}
         </motion.div>
+         <motion.p
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ delay: 0.3, duration: 0.7 }}
+          className="text-lg md:text-xl text-gray-600 mt-10"
+        >
+          {t("who.footer")}
+        </motion.p>
 
         <div className="mt-12">
           <Button>{t("who.cta")}</Button>

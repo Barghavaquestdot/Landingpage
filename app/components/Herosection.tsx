@@ -4,11 +4,24 @@ import { motion } from "framer-motion";
 import { FaBook } from "react-icons/fa";
 import Button from "./ui/Button";
 import { useTranslation } from "react-i18next";
+import { useEffect, useState } from "react";
 
 const HeroSection = () => {
   const { t, ready } = useTranslation("common");
+  const [mounted, setMounted] = useState(false);
 
-  if (!ready) return null;
+  // mark mounted so any client-only computation happens after hydration
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  // Fallback strings (deterministic) shown until i18n is ready on client.
+  // Keep these minimal and stable so server and client DOM match.
+  const title = ready ? t("hero.title") : " "; // single space to avoid empty-state DOM changes
+  const quote = ready ? t("hero.quote") : " ";
+  const subtitlePart1 = ready ? t("hero.subtitle.part1") : " ";
+  const description = ready ? t("hero.description") : " ";
+  const cta = ready ? t("hero.cta") : " ";
 
   return (
     <section
@@ -25,35 +38,35 @@ const HeroSection = () => {
       <div className="absolute top-6 left-6 md:left-16 z-20 flex items-center gap-2">
         <FaBook className="text-2xl md:text-3xl text-white" />
         <span className="text-white font-bold text-lg md:text-2xl">
-          {t("hero.title")}
+          {title}
         </span>
       </div>
 
       <div className="relative z-10 text-center max-w-3xl">
         <motion.h1
           initial={{ opacity: 0, y: -40 }}
-          animate={{ opacity: 1, y: 0 }}
+          animate={mounted ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 1 }}
           className="text-3xl md:text-5xl font-extrabold leading-snug font-serif mb-6"
         >
-          <span className="text-[#d0181c]">{t("hero.quote")}</span>
+          <span className="text-[#d0181c]">{quote}</span>
           <br />
-          <span className="text-white">
-            {t("hero.subtitle.part1")}{" "}
-            <span className="text-[#d0181c]">{t("hero.subtitle.part2")}</span>
+          <span className="text-red">
+            {subtitlePart1}
           </span>
         </motion.h1>
 
         <motion.p
           initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
+          animate={mounted ? { opacity: 1, y: 0 } : {}}
           transition={{ delay: 0.3, duration: 0.8 }}
           className="text-white/90 text-base md:text-xl font-light mb-10"
         >
-          {t("hero.description")}
+          {description}
         </motion.p>
 
-        <Button>{t("hero.cta")}</Button>
+        {/* Render the button always (deterministic DOM). If you want the label to update when ready, it will */}
+        <Button>{cta}</Button>
       </div>
     </section>
   );
