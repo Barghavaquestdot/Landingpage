@@ -30,13 +30,9 @@ const CallToActionSection = () => {
           transition={{ delay: 0.3, duration: 0.6 }}
           className="flex flex-col md:flex-row justify-center gap-6"
         >
-          {/* Download CTA */}
-          <button className="flex items-center justify-center gap-3 bg-gradient-to-r from-[#d0181c] to-[#d0181c] hover:from-[#d0181c] hover:to-red-800 text-white font-semibold text-lg px-8 py-4 rounded-full shadow-md transition-all duration-300">
-            <FaDownload className="text-xl" /> {t("cta.download")}
-          </button>
 
           {/* Call CTA */}
-          <button className="flex items-center justify-center gap-3 border-2 border-[#d0181c] text-[#d0181c] hover:bg-[#d0181c] hover:text-white font-semibold text-lg px-8 py-4 rounded-full shadow-md transition-all duration-300">
+          <button className="flex items-center justify-center gap-3 border-2 border-[#d0181c] text-[#d0181c] hover:bg-[#d0181c] hover:text-white font-semibold text-lg px-8 py-4 rounded-full shadow-md transition-all duration-300 cursor-pointer">
             <FaPhoneAlt className="text-xl" /> {t("cta.consult")}
           </button>
         </motion.div>

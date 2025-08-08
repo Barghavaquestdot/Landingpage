@@ -34,28 +34,27 @@ const GuidePreview = () => {
           transition={{ duration: 0.6 }}
           className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-center"
         >
-          📘 {t("guidePreview.title")}{" "}
+          {t("guidePreview.title")}{" "}
           <span className="text-[#d0181c]">{t("guidePreview.highlight")}</span>
         </motion.h2>
 
-        {/* Layout */}
-        <div className="flex flex-col lg:flex-row items-center gap-20">
-          {/* 📘 Book Image - Enlarged */}
-          <div className="w-full lg:w-1/2 flex justify-center lg:justify-start">
-            <div className="relative w-[320px] sm:w-[420px] md:w-[500px] lg:w-[560px] xl:w-[600px]">
-               <Image
-                    src="/guidesection2.png"
-                    alt={t("guidePreview.imageAlt")}
-                   width={600}
-                  height={800}
-                  className="absolute -top-80 -left-1  -rotate-25 object-contain rounded-xl shadow-2xl "
-                   priority
-               />
+        {/* Responsive Layout */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 items-center gap-16 lg:gap-20">
+         {/* Image Section */}
+          <div className="w-full flex justify-center lg:justify-start">
+            <div className="relative min-h-[400px] sm:min-h-[500px] md:min-h-[580px] lg:min-h-[640px] xl:min-h-[700px] w-full max-w-[700px]">
+              <Image
+                src="/guidesection2.png"
+                alt={t("guidePreview.imageAlt")}
+                fill
+                className="absolute -top-80 md:-top-[360px] lg:-top-[400px] left-10 -rotate-70 object-contain rounded-xl shadow-2xl"
+                priority
+              />
             </div>
           </div>
 
-          {/* ✅ Text Content */}
-          <div className="w-full lg:w-1/2 text-left">
+          {/* Text Section */}
+          <div className="w-full text-left">
             <motion.p
               initial={{ opacity: 0, y: 10 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -66,7 +65,7 @@ const GuidePreview = () => {
               {t("guidePreview.subtitle")}
             </motion.p>
 
-            <div className="space-y-6 border-l border-[#d0181c]0 pl-6">
+            <div className="space-y-6 border-l border-[#d0181c] pl-6">
               {highlights.map((item, index) => (
                 <div key={index} className="space-y-1">
                   <h3 className="text-white text-lg md:text-xl font-semibold">

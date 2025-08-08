@@ -16,6 +16,7 @@ import TestimonialsSectionBase from "./components/Testimonals";
 import LanguageSwitcher from "./components/LanguageSwitcher";
 import CompanySectionBase from "./components/AboutCompany"
 import { useTranslation } from "react-i18next";
+import FloatingConsultationButton from "./components/Floatingbutton";
 
 const HeroSection = withTranslationReady(HeroSectionBase, "common");
 const ProblemSection = withTranslationReady(ProblemSectionBase, "common");
@@ -40,10 +41,10 @@ export default function Home() {
       <WhoNeeds key={i18n.language + '-who'} />
       <GuidePreview key={i18n.language + '-guide'} />
       <AuthorSection key={i18n.language + '-author'} />
-      <CompanySection key={i18n.language + '-company'}/>
       <TestimonialsSection key={i18n.language + '-testimonials'} />
-      <CallToActionSection key={i18n.language + '-cta'} />
+      <CompanySection key={i18n.language + '-company'}/>
       <Footer key={i18n.language + '-footer'} />
+      <FloatingConsultationButton />
     </main>
   );
 }

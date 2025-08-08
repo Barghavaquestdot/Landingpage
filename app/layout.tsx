@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import LanguageSwitcher from "./components/LanguageSwitcher";
+import FloatingConsultationButton from "./components/Floatingbutton";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -68,6 +69,7 @@ export default function RootLayout({
       >
         <LanguageSwitcher />
         {children}
+        <FloatingConsultationButton/>
       </body>
     </html>
   );

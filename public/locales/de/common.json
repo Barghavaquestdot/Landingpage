@@ -3,84 +3,91 @@
     "title": "Der Leitfaden",
     "quote": "„Der geheime Code für Entscheidungsträger“",
     "subtitle": {
-      "part1": "Echtzeitdaten",
-      "part2": "statt blindem Handeln"
+      "part1": "Mit Echtzeitsteuerung Energie, Zeit und Geld sparen"
     },
-    "description": "Wie Sie Präzision zur stärksten Kraft in Ihrem Unternehmen machen – und Energie, Zeit und Geld sparen.",
+    "description": "Treffen Sie fundierte Entscheidungen auf Basis präziser, aktueller Echtzeitdaten statt auf vagen Vermutungen. Der umfassende Leitfaden „Der geheime Code für Entscheidungsträger“ bietet praxisnahe, inspirierende Einblicke, wie Sie komplexe Prozesse nachhaltig optimieren, wertvolle Ressourcen höchst effizient nutzen und Ihre unternehmerischen Ziele zielgerichtet erreichen.",
     "cta": "➡ Jetzt den Leitfaden holen"
   },
   "problem": {
-    "title": "Ungenauigkeit",
+    "title": "Warum präzise Steuerung den Unterschied macht",
     "highlight": "kostet Sie Gewinn",
     "imageAlt": "Illustration des Kostenlecks",
     "points": [
-      "Daten werden manuell eingegeben oder gar nicht genutzt",
-      "Maschinen laufen ineffizient und zu lange",
-      "Fehler, Ausschuss, Ausfallzeiten – und niemand weiß warum"
+      "Automatisierte, intelligente Datenerfassung",
+      "Optimierte, flexible Maschinensteuerung",
+      "Verluste werden glasklar sichtbar und mühelos kontrollierbar"
     ],
+    "point1":"Automatisierte, intelligente Datenerfassung verschafft Ihnen nicht nur volle Transparenz, sondern schenkt wertvolle Zeit. Ihr Team konzentriert sich auf das Wesentliche, wiederkehrende Routinen laufen reibungslos – das schafft dringend benötigte Freiräume.",
+    "point2":"Optimierte, flexible Maschinensteuerung lässt Prozesse noch flüssiger laufen und minimiert unnötige Stillstände – das sorgt für spürbare Entlastung und ein neues Sicherheitsgefühl im Betriebsalltag.",
+    "point3":"Verluste werden glasklar sichtbar und mühelos kontrollierbar – Sie treffen zukunftsweisende Entscheidungen auf Basis harter, objektiver Fakten, fördern verantwortungsbewusstes Handeln im Team und erleben gemeinsam beeindruckende Verbesserungen.",
     "warning": "Jeder kleine Fehler summiert sich zu einem großen Problem.",
     "cta": "Mehr erfahren"
   },
   "solution": {
-    "title": "Der 40-seitige Guide® ist Ihr Fahrplan für maximale Effizienz",
-    "description": "Erfahren Sie Schritt für Schritt, wie Sie Ihre Prozesse analysieren, präzise Daten gewinnen und Ihre Ressourcennutzung optimieren – während Sie Mitarbeiter entlasten und Kunden begeistern.",
+    "title": "Ihr vielseitiger Werkzeugkasten für messbaren Fortschritt",
+    "description": "Der Leitfaden bietet bewährte, praxisnahe Strategien und klar strukturierte, erprobte Empfehlungen, die sich ganz einfach und zeitsparend in Ihren anspruchsvollen Arbeitsalltag integrieren lassen:",
     "cta": "➡ Kostenlosen Guide anfordern",
     "imageAlt": "Guide-Buchcover",
     "advantages": [
       {
         "icon": "list",
-        "title": "Klarer Fahrplan für präzise Prozesse"
+        "title": "Aktuelle Echtzeitdaten gezielt nutzen"
       },
       {
         "icon": "cogs",
-        "title": "Automatische Erfassung und Nutzung von Echtzeitdaten"
+        "title": "Bis zu 25% nachweisbare Energieeinsparung"
       },
       {
         "icon": "leaf",
-        "title": "Energieverbrauch & Kosten um bis zu 25 % senken"
+        "title": "Teams gezielt entlasten und nachhaltig stärken"
       },
       {
         "icon": "smile",
-        "title": "Mitarbeiter motivieren, Kunden langfristig binden"
+        "title": "Kundenzufriedenheit spürbar steigern"
       },
       {
         "icon": "bolt",
-        "title": "Nachhaltigkeit & CSRD-Berichtspflichten erfüllen"
+        "title": "Nachhaltigkeit aktiv leben"
       }
     ]
   },
   "who": {
     "title": "Für wen ist dieser Leitfaden gedacht?",
-    "description": "Dieser Leitfaden richtet sich an Fachleute, die keine Vermutungen mehr anstellen, sondern mit Klarheit optimieren möchten.",
+    "description": "Dieses fundierte Wissen richtet sich an alle, die ihre komplexen Prozesse zukunftssicher und messbar optimieren möchten:",
     "audience": [
-      "Geschäftsführer von kleinen und mittelständischen Unternehmen",
-      "Energie- und Produktionsleiter",
-      "Entscheider, die Präzision und Digitalisierung gemeinsam denken"
+      "Geschäftsleitung und engagiertes technisches Management",
+      "Erfahrene Energie- und Produktionsleiter",
+      "Verantwortliche für fortschrittliche Digitalisierung und nachhaltige Effizienz"
     ],
+    "footer":"Wenn Sie konkrete, sichtbare Ergebnisse anstreben, bietet Ihnen dieser Leitfaden eine wertvolle, praxistaugliche Grundlage.",
     "cta": "➡ Jetzt unverbindlich anfragen"
   },
   "guidePreview": {
     "title": "Was Sie erwartet – Ein Blick in",
     "highlight": "den Leitfaden",
-    "subtitle": "Was Sie auf 40 Seiten erwartet",
+    "subtitle": "Das erwartet Sie auf 40 spannenden Seiten:",
     "imageAlt": "Vorschau des Leitfadens",
     "cta": "➡ Jetzt buchen",
     "highlights": [
       {
-        "title": "Lernen Sie, die richtigen Ziele zu setzen",
-        "description": "Warum präzise KPIs Ihr größter Hebel sind, um unnötigen Aufwand und verschwendetes Budget zu vermeiden."
+        "title": "Zielsetzung und transparente Messbarkeit",
+        "description": "Setzen Sie klare, relevante KPIs – und realisieren Sie nachweislich bis zu 25% Energieeinsparung. Die richtigen, intelligent gewählten Messgrößen helfen Ihnen, alle Prozesse transparent zu gestalten und gezielt wertvolle Zeit einzusparen."
       },
       {
-        "title": "Kühlung und Druckmetriken korrelieren",
-        "description": "Wie Sie thermische, hydraulische und Energie-Messwerte integrieren, um verborgene Engpässe sofort zu erkennen."
+        "title": " Verborgene Potenziale erkennen",
+        "description": " Lernen Sie, wie Sie durch die gezielte, systematische Analyse von detaillierten Kühlungs- und Druckdaten bisher unsichtbare Effizienzreserven identifizieren und so Ihre Kosten langfristig und nachhaltig senken."
       },
       {
-        "title": "Anlagen für maximale Leistung ausrichten",
-        "description": "Ein bewährtes Framework zur Synchronisierung von Maschineneinstellungen, um Variabilität zu reduzieren."
+        "title": "Optimierung der gesamten Maschinenleistung",
+        "description": " Konkrete, bewährte Konzepte zeigen, wie Sie durch fein abgestimmte Maschinennutzung den Durchsatz deutlich steigern und kostspielige Produktionsausfälle zuverlässig vermeiden."
       },
       {
-        "title": "Sensoren, KI & Dashboards einsetzen",
-        "description": "Was ein modernes Monitoring-System liefert – und ein Schritt-für-Schritt-Plan, es in Tagen statt Monaten einzuführen."
+        "title": "Intelligente, smarte Technologieintegration",
+        "description": "Nutzen Sie modernste Sensorik, künstliche Intelligenz und innovative digitale Dashboards, um Ihre Daten automatisiert auszuwerten und jederzeit fundierte Entscheidungen in Echtzeit zu treffen"
+      },
+      {
+        "title":"Praxisnahe, vielseitige Handlungsempfehlungen für jedes Unternehmen",
+        "description":"Profitieren Sie von praxis erprobten Methoden, mit denen bereits zahlreiche Betriebe ihre Energiekosten deutlich reduziert und nachhaltig gesteigert haben. Mit über 25 Jahren Erfahrung ist Andreas Babel als anerkannter Spezialist für industrielle Automatisierung und digitale Transformation bekannt. Mit effizienten Tools verschafft er Unternehmen konkrete und messbare Effizienzgewinne – von klar nachvollziehbaren Kosteneinsparungen bis hin zu einer spürbar gesteigerten Motivationim gesamten Unternehmen."
       }
     ]
   },
@@ -94,6 +101,16 @@
       "part3": "Energie zu sparen, Maschinenausfälle zu halbieren und die Mitarbeitermotivation zu steigern."
     },
     "cta": "➡ Mehr über den Autor"
+  },
+   "company": {
+    "title": "Über das Unternehmen",
+    "subtitle": "BS-Systeme GmbH – Ihr kompetenter Partner für nachhaltige Energieoptimierung und innovative Prozessautomatisierung",
+    "description": {
+      "part1": "Über 30 Jahre umfassende Expertise in Energieeffizienz und nachhaltiger Prozessoptimierung",
+      "part2": "Praxiserprobte, intelligente Lösungen für mittelständische Unternehmen zur wirkungsvollen Reduzierung von Energiekosten und nachhaltigen Steigerung der Produktionsleistung",
+      "part3": " Made in Germany – geprüfte, hochwertige Qualität für langlebige Automatisierung und industrialisierte Digitalisierung"
+    },
+    "cta": "➡ Mehr erfahren"
   },
   "testimonials": {
     "title": "Was unsere Kunden sagen",
