@@ -22,49 +22,65 @@ const HeroSection = () => {
 
   return (
     <section
-      className="relative text-white w-full min-h-screen flex items-start justify-center px-6 md:px-24 pt-36 md:pt-44 lg:pt-48 pb-20 bg-black"
+      className="relative text-white w-full min-h-screen flex items-start justify-center px-4 sm:px-6 md:px-10 lg:px-24 pt-24 sm:pt-28 md:pt-40 lg:pt-44 pb-16 sm:pb-20 bg-black"
       style={{
         backgroundImage: "url('/section1.jpg')",
         backgroundSize: "cover",
         backgroundPosition: "center",
       }}
     >
-      <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/70 to-transparent z-0" />
-      <div className="absolute w-96 h-96 bg-[#d0181c] opacity-30 rounded-full blur-3xl top-[-100px] left-[-100px] z-0" />
+      {/* Background overlay */}
+      <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-black/70 to-black/20 sm:from-black/70 sm:via-black/70 sm:to-transparent z-0" />
 
-      {/* Top Left Logo & Title */}
-      <div className="absolute top-6 left-6 md:left-16 z-20 flex items-center gap-2">
-        <FaBook className="text-2xl md:text-3xl text-white" />
-        <span className="text-white font-bold text-lg md:text-2xl">{title}</span>
+      {/* Red glow */}
+      <div className="absolute w-64 sm:w-72 md:w-96 h-64 sm:h-72 md:h-96 bg-[#d0181c] opacity-30 rounded-full blur-3xl -top-20 -left-20 z-0" />
+
+      {/* Logo and title */}
+      <div className="absolute top-4 sm:top-6 left-4 sm:left-6 md:left-16 z-20 flex items-center gap-2">
+        <FaBook className="text-xl sm:text-2xl md:text-3xl text-white shrink-0" />
+        <span className="text-white font-bold text-base sm:text-lg md:text-2xl line-clamp-1">
+          {title}
+        </span>
       </div>
 
-      <div className="relative z-10 text-center max-w-3xl w-full">
-        {/* Headline */}
+      {/* Main content */}
+      <div className="relative z-10 text-center w-full max-w-[48rem] mx-auto">
+        
+        {/* Main Heading - Quote */}
         <motion.h1
           initial={{ opacity: 0, y: -30 }}
           animate={mounted ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 1 }}
-          className="text-2xl sm:text-3xl md:text-4xl font-extrabold leading-snug font-serif mt-[-40px] mb-4 sm:mb-6"
+          className="font-extrabold font-serif mb-3 sm:mb-4 leading-tight text-[#d0181c] text-3xl sm:text-4xl md:text-5xl lg:text-4xl"
         >
-          <span className="text-[#d0181c] block mb-3 md:text-4xl">{quote}</span>
-          <span className="text-red-500 text-base sm:text-lg md:text-2xl">{subtitlePart1}</span>
+          {quote}
         </motion.h1>
 
-        {/* Description */}
-        <motion.p
-          initial={{ opacity: 0, y: 20 }}
+        {/* Subtitle */}
+        <motion.h3
+          initial={{ opacity: 0, y: 15 }}
           animate={mounted ? { opacity: 1, y: 0 } : {}}
-          transition={{ delay: 0.3, duration: 0.8 }}
-          className="text-white text-sm sm:text-base md:text-xl lg:text-xl font-light mb-8 sm:mb-10 leading-relaxed md:leading-loose max-w-2xl mx-auto px-2"
-          style={{
-            textShadow: "0 0 6px rgba(0,0,0,0.4)",
-          }}
+          transition={{ delay: 0.2, duration: 0.8 }}
+          className="text-red-500 text-base sm:text-lg md:text-2xl mb-6 sm:mb-8"
+        >
+          {subtitlePart1}
+        </motion.h3>
+
+        {/* Description */}
+        <motion.h4
+          initial={{ opacity: 0, y: 15 }}
+          animate={mounted ? { opacity: 1, y: 0 } : {}}
+          transition={{ delay: 0.4, duration: 0.8 }}
+          className="text-white text-sm sm:text-base md:text-lg lg:text-xl font-light mb-8 sm:mb-10 leading-relaxed md:leading-loose max-w-2xl mx-auto px-2 sm:px-3"
+          style={{ textShadow: "0 0 6px rgba(0,0,0,0.4)" }}
         >
           {description}
-        </motion.p>
+        </motion.h4>
 
-        {/* CTA Button */}
-        <Button>{cta}</Button>
+        {/* Call to action */}
+        <div className="flex justify-center">
+          <Button>{cta}</Button>
+        </div>
       </div>
     </section>
   );

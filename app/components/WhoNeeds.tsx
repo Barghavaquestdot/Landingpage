@@ -9,9 +9,7 @@ import { withTranslationReady } from "../utils/withTranslationReady";
 const containerVariants = {
   hidden: {},
   visible: {
-    transition: {
-      staggerChildren: 0.3,
-    },
+    transition: { staggerChildren: 0.3 },
   },
 };
 
@@ -22,7 +20,6 @@ const itemVariants = {
 
 const WhoNeeds = () => {
   const { t, ready } = useTranslation("common");
-
   if (!ready) return null;
 
   const rawAudience = t("who.audience", { returnObjects: true });
@@ -30,23 +27,22 @@ const WhoNeeds = () => {
 
   return (
     <section className="relative w-full bg-gradient-to-br from-white to-gray-100 text-black py-28 px-6 md:px-32 overflow-hidden">
-      {/* Decorative Circles */}
+      {/* ===== Visible, tasteful animated background (no content changes) ===== */}
       <div className="absolute inset-0 z-0 pointer-events-none">
-        <motion.div
-          initial={{ scale: 0 }}
-          animate={{ scale: 1.2 }}
-          transition={{ duration: 6, repeat: Infinity, repeatType: "reverse" }}
-          className="absolute w-96 h-96 bg-red-300/20 rounded-full blur-3xl top-[-50px] left-[-80px]"
-        />
-        <motion.div
-          initial={{ scale: 0 }}
-          animate={{ scale: 1.2 }}
-          transition={{ duration: 7, repeat: Infinity, repeatType: "mirror", delay: 1 }}
-          className="absolute w-96 h-96 bg-red-500/10 rounded-full blur-3xl bottom-[-60px] right-[-60px]"
-        />
+        {/* Layer 1: animated soft red wash */}
+        <div className="abs-fill animated-wash" />
+
+        {/* Layer 2: breathing blurred halos */}
+        <div className="abs-fill">
+          <div className="halo halo-1" />
+          <div className="halo halo-2" />
+        </div>
+
+        {/* Layer 3: diagonal sweep */}
+        <div className="abs-fill sweep" />
       </div>
 
-      {/* Content */}
+      {/* ===== Content (unchanged) ===== */}
       <div className="relative z-10 max-w-5xl mx-auto text-center">
         <motion.h2
           initial={{ opacity: 0, scale: 0.8 }}
@@ -68,7 +64,6 @@ const WhoNeeds = () => {
           {t("who.description")}
         </motion.p>
 
-        {/* Audience Cards */}
         <motion.div
           variants={containerVariants}
           initial="hidden"
@@ -89,7 +84,8 @@ const WhoNeeds = () => {
             </motion.div>
           ))}
         </motion.div>
-         <motion.p
+
+        <motion.p
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -102,6 +98,91 @@ const WhoNeeds = () => {
         <div className="mt-12">
           <Button>{t("who.cta")}</Button>
         </div>
+      </div>
+
+    <style jsx>{`
+        .abs-fill {
+          position: absolute;
+          inset: 0;
+        }
+
+        /* Pulsating Glow Layer */
+        .pulsating-glow {
+          position: absolute;
+          inset: 0;
+          background: radial-gradient(
+            circle at center,
+            rgba(208, 24, 28, 0.15) 0%,
+            rgba(208, 24, 28, 0.05) 40%,
+            transparent 70%
+          );
+          animation: pulseGlow 6s ease-in-out infinite;
+        }
+        @keyframes pulseGlow {
+          0%, 100% { transform: scale(1); opacity: 0.6; }
+          50% { transform: scale(1.15); opacity: 0.8; }
+        }
+
+        /* Floating Halos with slight drift */
+        .halo {
+          position: absolute;
+          filter: blur(45px);
+          border-radius: 999px;
+          animation: drift 10s ease-in-out infinite alternate;
+          pointer-events: none;
+        }
+        .halo-1 {
+          width: 420px;
+          height: 420px;
+          left: -120px;
+          top: -100px;
+          background: radial-gradient(
+            circle at 50% 50%,
+            rgba(208, 24, 28, 0.28) 0%,
+            rgba(208, 24, 28, 0.08) 60%,
+            transparent 80%
+          );
+        }
+        .halo-2 {
+          width: 380px;
+          height: 380px;
+          right: -120px;
+          bottom: -120px;
+          background: radial-gradient(
+            circle at 50% 50%,
+            rgba(208, 24, 28, 0.25) 0%,
+            rgba(208, 24, 28, 0.07) 60%,
+            transparent 80%
+          );
+          animation-delay: 1.5s;
+        }
+        @keyframes drift {
+          0% { transform: translate(0, 0) scale(1); }
+          50% { transform: translate(20px, -15px) scale(1.05); }
+          100% { transform: translate(-15px, 20px) scale(1); }
+        }
+
+        /* Subtle particle drift */
+        .particles {
+          position: absolute;
+          inset: 0;
+          background-image: radial-gradient(rgba(255, 255, 255, 0.15) 1px, transparent 1px);
+          background-size: 3px 3px;
+          animation: particleMove 30s linear infinite;
+          opacity: 0.3;
+        }
+        @keyframes particleMove {
+          from { transform: translateY(0) translateX(0); }
+          to { transform: translateY(-20px) translateX(15px); }
+        }
+      `}</style>
+
+      {/* Background layers */}
+      <div className="absolute inset-0 z-0 pointer-events-none">
+        <div className="abs-fill pulsating-glow" />
+        <div className="abs-fill halo halo-1" />
+        <div className="abs-fill halo halo-2" />
+        <div className="abs-fill particles" />
       </div>
     </section>
   );
