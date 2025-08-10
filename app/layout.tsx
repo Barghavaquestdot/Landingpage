@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-import LanguageSwitcher from "./components/LanguageSwitcher";
 import FloatingConsultationButton from "./components/Floatingbutton";
 
 const geistSans = Geist({
@@ -67,7 +66,6 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <LanguageSwitcher />
         {children}
         <FloatingConsultationButton/>
       </body>

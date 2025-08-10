@@ -7,7 +7,8 @@ i18n
   .use(HttpApi)
   .use(initReactI18next)
   .init({
-    fallbackLng: "en",
+    fallbackLng: "de",
+    lng: "de",
     supportedLngs: ["en", "de"],
     ns: ["common"],
     defaultNS: "common",

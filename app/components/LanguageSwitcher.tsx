@@ -1,32 +1,39 @@
 "use client";
-
-import { useTranslation } from "react-i18next";
 import { useEffect, useState } from "react";
-import { FaGlobe } from "react-icons/fa";
+import { useTranslation } from "react-i18next";
 
 export default function LanguageSwitcher() {
   const { i18n } = useTranslation();
   const [mounted, setMounted] = useState(false);
 
-  useEffect(() => {
-    setMounted(true);
-  }, []);
+  // Avoid SSR/CSR mismatch: render only after mount
+  useEffect(() => setMounted(true), []);
 
-  const toggleLanguage = () => {
-    const newLang = i18n.language === "en" ? "de" : "en";
-    i18n.changeLanguage(newLang);
-  };
+  if (!mounted) {
+    return <div className="inline-flex gap-2 rounded-full bg-white/5 p-1 border border-white/10" suppressHydrationWarning />;
+  }
 
-  if (!mounted) return null;
+  const languages: Array<{ code: string; label: string }> = [
+    { code: "en", label: "EN" },
+    { code: "de", label: "DE" },
+  ];
 
   return (
-    <button
-      onClick={toggleLanguage}
-      className="fixed top-4 right-4 z-50 flex items-center gap-2 px-3 py-1.5 bg-black/80 hover:bg-[#d0181c] transition text-white text-sm font-semibold rounded-full shadow-lg border border-white/10 backdrop-blur-md"
-      aria-label="Toggle Language"
-    >
-      <FaGlobe className="text-[#d0181c]" />
-      {i18n.language === "en" ? "DE" : "EN"}
-    </button>
+    <div className="inline-flex gap-2 rounded-full bg-white/5 p-1 border border-white/10" suppressHydrationWarning>
+      {languages.map((lng) => (
+        <button
+          key={lng.code}
+          onClick={() => i18n.changeLanguage(lng.code)}
+          className={`px-3 py-1 rounded-full text-xs font-semibold transition ${
+            i18n.language === lng.code
+              ? "bg-red-600 text-white"
+              : "text-white/80 hover:text-white hover:bg-white/10"
+          }`}
+          aria-pressed={i18n.language === lng.code}
+        >
+          {lng.label}
+        </button>
+      ))}
+    </div>
   );
 }
