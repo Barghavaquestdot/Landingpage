@@ -1,7 +1,6 @@
 "use client";
 import { motion } from "framer-motion";
 import { FaRobot, FaCogs, FaEye } from "react-icons/fa";
-import AnimatedProblemBackground from "./AnimatedBackground";
 import Button from "./ui/Button";
 import { useTranslation } from "react-i18next";
 import { useState } from "react";
@@ -21,81 +20,122 @@ function FlipSquare({
 
   return (
     <div className="w-full max-w-xs mx-auto">
-      <div className="relative group [perspective:1000px]">
-        <div
-          onClick={() => setIsFlipped((p) => !p)}
-          className="relative aspect-square rounded-2xl transition-transform duration-500 shadow-2xl"
-          style={{
-            transformStyle: "preserve-3d",
-            transform: isFlipped ? "rotateY(180deg)" : "rotateY(0deg)",
-            cursor: "pointer",
-          }}
-          aria-pressed={isFlipped}
+      {/* Mobile: fade swap (no 3D → no overlap) */}
+      <div
+        className="md:hidden relative rounded-2xl shadow-2xl overflow-hidden bg-white"
+        onClick={() => setIsFlipped((p) => !p)}
+        role="button"
+        aria-pressed={isFlipped}
+      >
+        <motion.div
+          key={isFlipped ? "back" : "front"}
+          initial={{ opacity: 0, y: 8 }}
+          animate={{ opacity: 1, y: 0 }}
+          exit={{ opacity: 0, y: -8 }}
+          transition={{ duration: 0.25 }}
+          className="p-6"
         >
-          {/* FRONT — Book cover */}
-          <div
-            className="absolute inset-0 rounded-2xl overflow-hidden"
-            style={{
-              backfaceVisibility: "hidden",
-              WebkitBackfaceVisibility: "hidden",
-            }}
-          >
-            {/* Cover base with subtle texture */}
-            <div
-              className="absolute inset-0"
-              style={{
-                background:
-                  "linear-gradient(180deg, rgba(0,0,0,0.06), rgba(0,0,0,0.08)), radial-gradient(100% 80% at 50% 0%, rgba(255,255,255,0.2), rgba(0,0,0,0) 70%), #111827",
-              }}
-            />
-            {/* Paper tint so it sits within red/white/black theme */}
-            <div
-              className="absolute inset-0"
-              style={{
-                background:
-                  "linear-gradient(180deg, rgba(255,255,255,0.12), rgba(239,68,68,0.05))",
-                mixBlendMode: "overlay" as any,
-              }}
-            />
-            {/* Embossed inner frame */}
-            <div className="absolute inset-3 rounded-xl border border-white/10 shadow-[inset_0_1px_0_rgba(255,255,255,0.08),inset_0_-1px_0_rgba(0,0,0,0.25)]" />
-            {/* Spine */}
-            <div className="absolute left-0 top-0 h-full w-2 rounded-l-2xl bg-red-600 shadow-[inset_-1px_0_0_rgba(0,0,0,0.3)]" />
-            {/* Ribbon tab (top-right) */}
-            <div className="absolute -top-1 right-6 w-0 h-0 border-l-8 border-r-8 border-b-[14px] border-l-transparent border-r-transparent border-b-red-600 drop-shadow" />
-
-            {/* Content */}
-            <div className="relative z-10 h-full flex flex-col items-center justify-center p-6 gap-3">
+          {!isFlipped ? (
+            <div className="flex flex-col items-center text-center gap-3 bg-[#111827] text-white rounded-2xl p-6">
               <span className="text-red-500 text-3xl">{icon}</span>
-              <h3 className="text-base md:text-lg font-semibold text-white/95 text-center">
-                {frontText}
-              </h3>
+              <h3 className="text-base md:text-lg font-semibold">{frontText}</h3>
             </div>
-          </div>
+          ) : (
+            <div
+              className="rounded-2xl p-6 text-center"
+              style={{
+                backgroundImage:
+                  "linear-gradient(90deg, rgba(239,68,68,0.25) 80px, transparent 80px),repeating-linear-gradient(0deg, rgba(0,0,0,0.08), rgba(0,0,0,0.08) 1px, transparent 1px, transparent 28px)",
+                backgroundColor: "#fff",
+              }}
+            >
+              <p className="text-sm leading-relaxed text-red-700 font-medium px-2">
+                {backText}
+              </p>
+            </div>
+          )}
+        </motion.div>
+      </div>
 
-          {/* BACK — Ruled paper notes */}
+      {/* Desktop/tablet: true 3D flip */}
+      <div className="hidden md:block">
+        <div className="relative group [perspective:1000px]">
           <div
-            className="absolute inset-0 rounded-2xl p-6 flex items-center justify-center overflow-hidden"
+            onClick={() => setIsFlipped((p) => !p)}
+            className="relative aspect-square rounded-2xl transition-transform duration-500 shadow-2xl transform-gpu will-change-transform flip-3d"
             style={{
-              backfaceVisibility: "hidden",
-              WebkitBackfaceVisibility: "hidden",
-              transform: "rotateY(180deg)",
-              backgroundImage: `
-                linear-gradient(90deg, rgba(239,68,68,0.25) 80px, transparent 80px),
-                repeating-linear-gradient(0deg, rgba(0,0,0,0.08), rgba(0,0,0,0.08) 1px, transparent 1px, transparent 28px)
-              `,
-              backgroundColor: "#fff",
+              transform: isFlipped ? "rotateY(180deg)" : "rotateY(0deg)",
+              cursor: "pointer",
+              contain: "layout paint",
+              WebkitTransformStyle: "preserve-3d",
             }}
+            aria-pressed={isFlipped}
           >
-            <p className="text-sm md:text-base leading-relaxed text-red-700 font-medium text-center px-2">
-              {backText}
-            </p>
+            {/* FRONT */}
+            <div
+              className="absolute inset-0 rounded-2xl overflow-hidden flip-face"
+              style={{ transform: "rotateY(0deg)" }}
+            >
+              <div
+                className="absolute inset-0"
+                style={{
+                  background:
+                    "linear-gradient(180deg, rgba(0,0,0,0.06), rgba(0,0,0,0.08)), radial-gradient(100% 80% at 50% 0%, rgba(255,255,255,0.2), rgba(0,0,0,0) 70%), #111827",
+                }}
+              />
+              <div
+                className="absolute inset-0"
+                style={{
+                  background:
+                    "linear-gradient(180deg, rgba(255,255,255,0.12), rgba(239,68,68,0.05))",
+                  mixBlendMode: "overlay" as any,
+                }}
+              />
+              <div className="absolute inset-3 rounded-xl border border-white/10 shadow-[inset_0_1px_0_rgba(255,255,255,0.08),inset_0_-1px_0_rgba(0,0,0,0.25)]" />
+              <div className="absolute left-0 top-0 h-full w-2 rounded-l-2xl bg-red-600 shadow-[inset_-1px_0_0_rgba(0,0,0,0.3)]" />
+              <div className="absolute -top-1 right-6 w-0 h-0 border-l-8 border-r-8 border-b-[14px] border-l-transparent border-r-transparent border-b-red-600 drop-shadow" />
 
-            {/* Rounded paper mask highlight */}
-            <div className="pointer-events-none absolute inset-0 rounded-2xl ring-1 ring-black/5 shadow-[inset_0_1px_0_rgba(255,255,255,0.6)]" />
+              {/* content (no z-index to avoid Safari bleed-through) */}
+              <div className="relative h-full flex flex-col items-center justify-center p-6 gap-3">
+                <span className="text-red-500 text-3xl">{icon}</span>
+                <h3 className="text-base md:text-lg font-semibold text-white/95 text-center">
+                  {frontText}
+                </h3>
+              </div>
+            </div>
+
+            {/* BACK */}
+            <div
+              className="absolute inset-0 rounded-2xl p-6 flex items-center justify-center overflow-hidden flip-face"
+              style={{
+                transform: "rotateY(180deg)",
+                backgroundImage:
+                  "linear-gradient(90deg, rgba(239,68,68,0.25) 80px, transparent 80px),repeating-linear-gradient(0deg, rgba(0,0,0,0.08), rgba(0,0,0,0.08) 1px, transparent 1px, transparent 28px)",
+                backgroundColor: "#fff",
+              }}
+            >
+              <p className="text-sm md:text-base leading-relaxed text-red-700 font-medium text-center px-2">
+                {backText}
+              </p>
+              <div className="pointer-events-none absolute inset-0 rounded-2xl ring-1 ring-black/5 shadow-[inset_0_1px_0_rgba(255,255,255,0.6)]" />
+            </div>
           </div>
         </div>
       </div>
+
+      {/* Safari/iOS: force backface on children too */}
+      <style jsx>{`
+        .flip-3d,
+        .flip-3d * {
+          -webkit-transform-style: preserve-3d;
+        }
+        .flip-face,
+        .flip-face * {
+          backface-visibility: hidden;
+          -webkit-backface-visibility: hidden;
+          transform: translateZ(0);
+        }
+      `}</style>
     </div>
   );
 }

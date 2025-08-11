@@ -52,19 +52,27 @@ export default function SolutionSection() {
           </motion.p>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-10">
-            {advantages.map((item, idx) => (
-              <motion.div
-                key={idx}
-                initial={{ opacity: 0, scale: 0.95 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.4, delay: idx * 0.08 }}
-                className="flex items-start gap-4 bg-white/10 hover:bg-white/20 p-4 rounded-xl backdrop-blur transition"
-              >
-                <div>{iconMap[item.icon]}</div>
-                <p className="text-white text-left text-base font-medium">{item.title}</p>
-              </motion.div>
-            ))}
+            {advantages.map((item, idx) => {
+              const isLast = idx === advantages.length - 1;
+
+              return (
+                <motion.div
+                  key={idx}
+                  initial={{ opacity: 0, scale: 0.95 }}
+                  whileInView={{ opacity: 1, scale: 1 }}
+                  transition={{ duration: 0.4, delay: idx * 0.08 }}
+                  className={[
+                    "flex items-start gap-4 bg-white/10 hover:bg-white/20 p-4 rounded-xl backdrop-blur transition",
+                    isLast ? "sm:col-span-2 justify-self-center w-full sm:w-auto sm:max-w-md" : "",
+                  ].join(" ")}
+                >
+                  <div>{iconMap[item.icon]}</div>
+                  <p className="text-white text-left text-base font-medium">{item.title}</p>
+                </motion.div>
+              );
+            })}
           </div>
+
 
           <Button>{t("solution.cta")}</Button>
         </div>
